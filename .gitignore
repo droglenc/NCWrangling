@@ -1,0 +1,9 @@
+## Stuff that should not be public
+Year_Specific/
+
+## R History files
+.Rhistory
+.Rapp.history
+## R project info
+.Rproj.user
+.httr-oauth
