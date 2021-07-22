@@ -5,8 +5,8 @@ title: Learning Modules
 
 * [Pre-Course Introduction to R](IntroR)
 
-1. [Course Organization](Setup)
-1. [Data Structures in R](Data-Structures)
+1. [Course Organization](Setup/)
+1. [Data Structures in R](Data-Structures/)
 1. Reading External Data into R
 1. Tidy Data
 1. Filtering and Selecting

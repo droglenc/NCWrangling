@@ -35,7 +35,7 @@ XXX
 ## Demonstration and Exercises
 
 <ul>
-  <li><a href="Data-Structures/CE_1.html">Exercise</a> <button type="button" class="btn btn-light btn-sm btn-space"><a href="Data-Structures/CE_1.R">Key</a></button></li>
+  <li><a href="CE_1.html">Exercise</a> <button type="button" class="btn btn-light btn-sm btn-space"><a href="CE_1.R">Key</a></button></li>
   </ul>
 </ul>
 
