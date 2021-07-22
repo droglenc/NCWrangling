@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Reading External Data
+title: Reading External Files
 css: /css/modules.css
 ---
 
