@@ -16,7 +16,7 @@ fnm <- "CE_1"
 dnm <- "modules/Reading-External-Files"
 modHTML(file.path(here::here(),dnm,fnm))
 FSA::purl2(file.path(here::here(),dnm,paste0(fnm,".Rmd")),
-           moreItems=c("source","setwd","fnm","dnm","opts_chunk","CTRL-S"))
+           moreItems=c("opts_chunk"))
 ```
 ```{r echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo=FALSE, results="hide")
@@ -29,46 +29,108 @@ library(tidyverse)
 
 1. Enter data of your choosing into a spreadsheet (preferably Excel) for at least three related variables recorded on at least five individuals. You may use the same data as in your [Data Structures Exercise](../Data-Structures/CE_1.html#data-frames-i). Save the file in your spreadsheet software and as a CSV file.
 
-1. Read your external CSV file into a data frame object in R. Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame.
+2. Read your external **CSV** file into a data frame object in R. Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame.
 
-1. Read your external Excel file into a data frame object in R. [*If you used Google Sheets instead of Excel then load directly from Google Sheets.*] Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame.
+```{r}
+df1c <- read_csv(file.path("..","..","resources","data","FishData.csv"))
+df1c
+str(df1c)
+```
+
+3. Read your external **Excel** file into a data frame object in R. [*If you used Google Sheets instead of Excel then load directly from Google Sheets.*] Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame.
+
+```{r}
+df1e <- readxl::read_excel(file.path("..","..","resources","data","FishData.xlsx"))
+df1e
+str(df1e)
+```
 
 &nbsp;
 
 ## Enter Data II
 Enter the credit load by year-in-school data from [this Data Structures Exercise](../Data-Structures/CE_1.html#data-frames-ii) into a data frame in tidy format. Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame.
 
+```{r}
+df2 <- read_csv(file.path("..","..","resources","data","StudentData.csv"))
+df2
+str(df2)
+```
+
 &nbsp;
 
 ## Reading Data I
 Read [these data](https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/ChallengeData_1.csv) into R. Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame. [*You should examine [the external file](https://github.com/droglenc/NCWrangling/blob/main/resources/data/ChallengeData_1.csv) prior to trying to read it into R.*]
+
+```{r}
+cdf1 <- read_csv("https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/ChallengeData_1.csv",skip=4)
+cdf1
+str(cdf1)
+```
 
 &nbsp;
 
 ## Reading Data II
 Read [these data](https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/ChallengeData_2.csv) into R. Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame. [*You should examine [the external file](https://github.com/droglenc/NCWrangling/blob/main/resources/data/ChallengeData_2.csv) prior to trying to read it into R.*]
 
+```{r}
+cdf2 <- read_csv("https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/ChallengeData_2.csv")
+cdf2
+str(cdf2)
+```
+
 &nbsp;
 
 ## Reading Data III
 Read [these data](https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/ChallengeData_3.csv) into R. Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame. [*You should examine [the external file](https://github.com/droglenc/NCWrangling/blob/main/resources/data/ChallengeData_3.csv) prior to trying to read it into R.*]
+
+```{r}
+cdf3 <- read_csv("https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/ChallengeData_3.csv",comment="##")
+cdf3
+str(cdf3)
+```
 
 &nbsp;
 
 ## Reading Data IV
 Read [these data](https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/ChallengeData_4.csv) into R by making sure that all missing values are treated properly. Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame. [*You should examine [the external file](https://github.com/droglenc/NCWrangling/blob/main/resources/data/ChallengeData_4.csv) prior to trying to read it into R.*]
 
+```{r}
+cdf4 <- read_csv("https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/ChallengeData_4.csv",na="XXX")
+cdf4
+str(cdf4)
+```
+
 &nbsp;
 
 ## Reading Data V
 Read [these data](https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/ChallengeData_5.csv) into R by making sure that all missing values are treated properly. Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame. [*You should examine [the external file](https://github.com/droglenc/NCWrangling/blob/main/resources/data/ChallengeData_5.csv) prior to trying to read it into R.*]
+
+```{r}
+cdf5 <- read_csv("https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/ChallengeData_5.csv",na=c("NA","NONE"))
+cdf5
+str(cdf5)
+```
 
 &nbsp;
 
 ## Reading Data VI
 Read [these data](https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/ChallengeData_6.csv) into R by making sure that all missing values are treated properly. Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame. [*You should examine [the external file](https://github.com/droglenc/NCWrangling/blob/main/resources/data/ChallengeData_6.csv) prior to trying to read it into R.*]
 
+```{r}
+cdf6 <- read_csv("https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/ChallengeData_6.csv",na="NONE",skip=6)
+cdf6
+str(cdf6)
+```
+
 &nbsp;
 
 ## Reading Data VII
-Read the sheet named "ChallengeData_6" in [these data](https://github.com/droglenc/NCWrangling/blob/main/resources/data/ChallengeData.xlsx?raw=true) into R by making sure that all missing values are treated properly. Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame. [*You should examine the external file prior to trying to read it into R.*]
+Read the sheet named "ChallengeData_6" in [these data](https://github.com/droglenc/NCWrangling/raw/main/resources/data/ChallengeData.xlsx) into R by making sure that all missing values are treated properly. Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame. [*You should examine the external file prior to trying to read it into R.*]
+
+```{r}
+
+cdf7 <- readxl::read_excel(file.path("..","..","resources","data","ChallengeData.xlsx"),
+                           sheet="ChallengeData_6",na="NONE",skip=6)
+cdf7
+str(cdf7)
+```
