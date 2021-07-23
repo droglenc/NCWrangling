@@ -41,5 +41,5 @@ Enter the credit load by year-in-school data from [this Data Structures Exercise
 &nbsp;
 
 ## Reading Data I
-Read [these data](https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/ChallengeData_1.csv) into R. Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame. [*You should examine the external file prior to trying to read it into R.*]
+Read [these data](https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/ChallengeData_1.csv) into R. Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame. [*You should examine [the external file](https://github.com/droglenc/NCWrangling/blob/main/resources/data/ChallengeData_1.csv){:target="_blank"} prior to trying to read it into R.*]
 
