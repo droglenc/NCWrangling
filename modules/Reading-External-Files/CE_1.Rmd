@@ -41,5 +41,34 @@ Enter the credit load by year-in-school data from [this Data Structures Exercise
 &nbsp;
 
 ## Reading Data I
-Read [these data](https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/ChallengeData_1.csv) into R. Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame. [*You should examine [the external file](https://github.com/droglenc/NCWrangling/blob/main/resources/data/ChallengeData_1.csv){:target="_blank"} prior to trying to read it into R.*]
+Read [these data](https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/ChallengeData_1.csv) into R. Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame. [*You should examine [the external file](https://github.com/droglenc/NCWrangling/blob/main/resources/data/ChallengeData_1.csv) prior to trying to read it into R.*]
 
+&nbsp;
+
+## Reading Data II
+Read [these data](https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/ChallengeData_2.csv) into R. Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame. [*You should examine [the external file](https://github.com/droglenc/NCWrangling/blob/main/resources/data/ChallengeData_2.csv) prior to trying to read it into R.*]
+
+&nbsp;
+
+## Reading Data III
+Read [these data](https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/ChallengeData_3.csv) into R. Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame. [*You should examine [the external file](https://github.com/droglenc/NCWrangling/blob/main/resources/data/ChallengeData_3.csv) prior to trying to read it into R.*]
+
+&nbsp;
+
+## Reading Data IV
+Read [these data](https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/ChallengeData_4.csv) into R by making sure that all missing values are treated properly. Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame. [*You should examine [the external file](https://github.com/droglenc/NCWrangling/blob/main/resources/data/ChallengeData_4.csv) prior to trying to read it into R.*]
+
+&nbsp;
+
+## Reading Data V
+Read [these data](https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/ChallengeData_5.csv) into R by making sure that all missing values are treated properly. Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame. [*You should examine [the external file](https://github.com/droglenc/NCWrangling/blob/main/resources/data/ChallengeData_5.csv) prior to trying to read it into R.*]
+
+&nbsp;
+
+## Reading Data VI
+Read [these data](https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/ChallengeData_6.csv) into R by making sure that all missing values are treated properly. Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame. [*You should examine [the external file](https://github.com/droglenc/NCWrangling/blob/main/resources/data/ChallengeData_6.csv) prior to trying to read it into R.*]
+
+&nbsp;
+
+## Reading Data VII
+Read the sheet named "ChallengeData_6" in [these data](https://github.com/droglenc/NCWrangling/blob/main/resources/data/ChallengeData.xlsx?raw=true) into R by making sure that all missing values are treated properly. Show your code for reading the external file, for showing the full data frame, and for showing the structure of the data frame. [*You should examine the external file prior to trying to read it into R.*]
