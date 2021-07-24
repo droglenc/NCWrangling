@@ -20,5 +20,39 @@ U <- left_join(A,B,by="uniq")
 
 T <- left_join(B,A,by="uniq")
 
+fn <- file.path("..","..","resources","data","Skiers.xlsx")
+racers <- readxl::read_excel(fn,sheet="skiers")
+races <- readxl::read_excel(fn,sheet="races")
+race1 <- readxl::read_excel(fn,sheet="race19")
+race2 <- readxl::read_excel(fn,sheet="race20")
 
-# Script created at 2021-07-24 12:33:40
+bothraces <- inner_join(race1,race2,by="bibID")
+bothraces
+
+bothraces <- right_join(racers,bothraces,by="bibID")
+bothraces
+
+race19only1 <- semi_join(race1,race2,by="bibID")
+race19only1
+
+race19only2 <- anti_join(race1,race2,by="bibID")
+race19only2
+
+race19ers <- left_join(race1,race2,by="bibID")
+race19ers
+
+master <- full_join(race1,race2,by="bibID")
+master
+
+fn <- file.path("..","..","resources","data","FoodInsecuritySurvey.xlsx")
+
+surv <- readxl::read_excel(fn,sheet="Surveys")
+res <- readxl::read_excel(fn,sheet="Results")
+
+FIS1 <- inner_join(surv,res,by="surv_num")
+FIS1
+FIS2 <- right_join(surv,res,by="surv_num")
+FIS2
+
+
+# Script created at 2021-07-24 15:01:37

@@ -754,9 +754,29 @@ NA
 </ol>
 <p> </p>
 </div>
+<div id="ski-club" class="section level2">
+<h2>Ski Club</h2>
+<p>A group of 16 competitive but amateur skiers formed a loosely-knit “club” to motivate themselves to keep skiing. The record keeper for the club developed a data organization that has four sheets in <a href="https://github.com/droglenc/NCWrangling/raw/main/resources/data/Skiers.xlsx">this Excel file</a>. The “skiers” sheet has information about each skier including a unique <code>bibID</code> code. The “races” sheet has information about each ski race that members of the club partake in and includes a unique “raceID” code. To date, two races have been entered into the spreadsheet. The “race19” results has results from the first race (i.e., <code>raceID</code>==1) for each of the members that participated in that race. The “race20” sheet is the samee for the second race (i.e., <code>raceID</code>==2). You should download the Excel file and load each sheet into a separate dataframe in R. Use these data frames to perform the following tasks. Show your R code and the resulting data frame.</p>
+<ol>
+<li><p>Show results from both races for racers that were in both races.</p></li>
+<li><p>Appended the racers’ personal information to the data frame from the previous question. As a matter of aesthetics do this in a manner such that the personal information is left most in the resulting data frame. [<em>Note that there should be no missing values in this data frame.</em>]</p></li>
+<li><p>Note that some of the variables in the data frame from the previous question have suffixes appended to the name. Explain why you think this happened and why it is needed.</p></li>
+<li><p>Show results for the first race <em>only</em> for racers that were in both races.</p></li>
+<li><p>Show results for the first race <em>only</em> for racers that were <em>only</em> in the first race.</p></li>
+<li><p>Show “results” for both races for all racers that were in the first race.</p></li>
+<li><p>Construct a “master race file” that has results for all racers for all races.</p></li>
+</ol>
+<p> </p>
+</div>
 <div id="food-insecurity-surveys" class="section level2">
 <h2>Food Insecurity Surveys</h2>
-<p>XXX</p>
+<p>Ashland County administrators want to assess factors that lead to food insecurity among residents of Ashland County. Towards this end they will distribute a food insecurity survey to as many households in the county as possible. As it is not know who is food insecure they have decided to either place the surveys at locations where those that are food insecure at likely to frequent. In addition, they will hand out some surveys directly to people at these locations.</p>
+<p>To monitor the return rate of the surveys the administrators have uniquely numbered each of 1000 surveys and will keep track of where, when, and how each survey was delivered. This information is recorded in the “Surveys” sheet of <a href="https://github.com/droglenc/NCWrangling/raw/main/resources/data/FoodInsecuritySurvey.xlsx">FoodInsecuritySurvey.xlsx</a>. Information, including the unique survey number, on the returned surveys was entered separately in the “Results” sheet of the same Excel workbook. Meta data for the two sheets is in the “meta” sheet of the same workbook. Load these data frames into R.</p>
+<p>Two of an inner, left, right, or full join can be used to create a new data frame that has all variables from both data frames present but only for surveys that have been returned.</p>
+<ol>
+<li>Show how to use both of these joins to create this new data frame. Comment on which method is preferred (if either) and why.</li>
+<li>Explain why the other two joins are not appropriate for this task.</li>
+</ol>
 </div>
 
 

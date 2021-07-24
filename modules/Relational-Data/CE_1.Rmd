@@ -148,5 +148,81 @@ knitr::kable(T,align="c") %>%
 
 &nbsp;
 
+## Ski Club
+A group of 16 competitive but amateur skiers formed a loosely-knit "club" to motivate themselves to keep skiing. The record keeper for the club developed a data organization that has four sheets in [this Excel file](https://github.com/droglenc/NCWrangling/raw/main/resources/data/Skiers.xlsx). The "skiers" sheet has information about each skier including a unique `bibID` code. The "races" sheet has information about each ski race that members of the club partake in and includes a unique "raceID" code. To date, two races have been entered into the spreadsheet. The "race19" results has results from the first race (i.e., `raceID`==1) for each of the members that participated in that race. The "race20" sheet is the samee for the second race (i.e., `raceID`==2). You should download the Excel file and load each sheet into a separate dataframe in R. Use these data frames to perform the following tasks. Show your R code and the resulting data frame.
+
+```{r}
+fn <- file.path("..","..","resources","data","Skiers.xlsx")
+racers <- readxl::read_excel(fn,sheet="skiers")
+races <- readxl::read_excel(fn,sheet="races")
+race1 <- readxl::read_excel(fn,sheet="race19")
+race2 <- readxl::read_excel(fn,sheet="race20")
+```
+
+1. Show results from both races for racers that were in both races.
+
+```{r}
+bothraces <- inner_join(race1,race2,by="bibID")
+bothraces
+```
+
+2. Appended the racers' personal information to the data frame from the previous question. As a matter of aesthetics do this in a manner such that the personal information is left most in the resulting data frame. [*Note that there should be no missing values in this data frame.*]
+
+```{r}
+bothraces <- right_join(racers,bothraces,by="bibID")
+bothraces
+```
+
+3. Note that some of the variables in the data frame from the previous question have suffixes appended to the name. Explain why you think this happened and why it is needed.
+
+4. Show results for the first race *only* for racers that were in both races.
+
+```{r}
+race19only1 <- semi_join(race1,race2,by="bibID")
+race19only1
+```
+
+5. Show results for the first race *only* for racers that were *only* in the first race.
+
+```{r}
+race19only2 <- anti_join(race1,race2,by="bibID")
+race19only2
+```
+
+6. Show "results" for both races for all racers that were in the first race.
+
+```{r}
+race19ers <- left_join(race1,race2,by="bibID")
+race19ers
+```
+
+7. Construct a "master race file" that has results for all racers for all races.
+
+```{r}
+master <- full_join(race1,race2,by="bibID")
+master
+```
+
+&nbsp;
+
 ## Food Insecurity Surveys
-XXX
+Ashland County administrators want to assess factors that lead to food insecurity among residents of Ashland County. Towards this end they will distribute a food insecurity survey to as many households in the county as possible. As it is not know who is food insecure they have decided to either place the surveys at locations where those that are food insecure at likely to frequent. In addition, they will hand out some surveys directly to people at these locations. 
+
+To monitor the return rate of the surveys the administrators have uniquely numbered each of 1000 surveys and will keep track of where, when, and how each survey was delivered. This information is recorded in the "Surveys" sheet of [FoodInsecuritySurvey.xlsx](https://github.com/droglenc/NCWrangling/raw/main/resources/data/FoodInsecuritySurvey.xlsx). Information, including the unique survey number, on the returned surveys was entered separately in the "Results" sheet of the same Excel workbook. Meta data for the two sheets is in the "meta" sheet of the same workbook. Load these data frames into R.
+
+Two of an inner, left, right, or full join can be used to create a new data frame that has all variables from both data frames present but only for surveys that have been returned.
+
+1. Show how to use both of these joins to create this new data frame. Comment on which method is preferred (if either) and why.
+1. Explain why the other two joins are not appropriate for this task.
+
+```{r}
+fn <- file.path("..","..","resources","data","FoodInsecuritySurvey.xlsx")
+
+surv <- readxl::read_excel(fn,sheet="Surveys")
+res <- readxl::read_excel(fn,sheet="Results")
+
+FIS1 <- inner_join(surv,res,by="surv_num")
+FIS1
+FIS2 <- right_join(surv,res,by="surv_num")
+FIS2
+```
