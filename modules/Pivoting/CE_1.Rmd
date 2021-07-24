@@ -1,0 +1,29 @@
+---
+layout: page
+title: Exercise - Pivoting
+author: Derek H. Ogle
+css: "/css/modules.css"
+output:
+  html_document:
+    self_contained: false
+    lib_dir: zlibs
+---
+
+```{r echo=FALSE, eval=FALSE}
+# Renders an appropriate HTML file for the webpage (CTRL-S and CTRL-ALT-R)
+source(file.path(here::here(),"rhelpers/rhelpers.R"))
+fnm <- "CE_1"
+dnm <- "modules/Pivoting"
+modHTML(file.path(here::here(),dnm,fnm))
+FSA::purl2(file.path(here::here(),dnm,paste0(fnm,".Rmd")),
+           moreItems=c("opts_chunk","kable","row_spec"))
+```
+```{r echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo=FALSE,results="hide",message=FALSE)
+library(tidyverse)
+library(kableExtra)
+```
+
+----
+
+## XXX
