@@ -138,10 +138,10 @@ pm
 <div style="clear:both;">
 
 </div>
-<p>What R code would you use to create each of the data frames shown below.</p>
+<p>What kind of join was applied to <code>A</code> and <code>B</code> to create each data frame below? [<em>Think deeply about your answers here but note that you will not be graded on your answers to these questions.</em>]</p>
 <ol>
 <li>
-Data frame Z
+Data frame <code>Z</code>
 </li>
 <table class=" lightable-classic table table-hover table-condensed table-striped" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto;">
 <thead>
@@ -220,7 +220,71 @@ am
 </tbody>
 </table>
 <li>
-Data frame Y
+Data frame <code>Y</code>
+</li>
+<table class=" lightable-classic table table-hover table-condensed table-striped" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;font-weight: bold;">
+uniq
+</th>
+<th style="text-align:center;font-weight: bold;">
+meas1
+</th>
+<th style="text-align:center;font-weight: bold;">
+meas2
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+A15
+</td>
+<td style="text-align:center;">
+87
+</td>
+<td style="text-align:center;">
+sun
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A15
+</td>
+<td style="text-align:center;">
+65
+</td>
+<td style="text-align:center;">
+moon
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A16
+</td>
+<td style="text-align:center;">
+33
+</td>
+<td style="text-align:center;">
+moon
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A16
+</td>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+sun
+</td>
+</tr>
+</tbody>
+</table>
+<li>
+Data frame <code>X</code>
 </li>
 <table class=" lightable-classic table table-hover table-condensed table-striped" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto;">
 <thead>
@@ -294,11 +358,405 @@ sun
 </td>
 <td style="text-align:center;">
 am
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A14
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+am
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A17
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+pm
+</td>
+</tr>
+</tbody>
+</table>
+<li>
+Data frame <code>W</code>
+</li>
+<table class=" lightable-classic table table-hover table-condensed table-striped" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;font-weight: bold;">
+uniq
+</th>
+<th style="text-align:center;font-weight: bold;">
+meas1
+</th>
+<th style="text-align:center;font-weight: bold;">
+meas2
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+A13
+</td>
+<td style="text-align:center;">
+34
+</td>
+<td style="text-align:center;">
+sun
+</td>
+</tr>
+</tbody>
+</table>
+<li>
+Data frame <code>V</code>
+</li>
+<table class=" lightable-classic table table-hover table-condensed table-striped" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;font-weight: bold;">
+uniq
+</th>
+<th style="text-align:center;font-weight: bold;">
+meas1
+</th>
+<th style="text-align:center;font-weight: bold;">
+meas2
+</th>
+<th style="text-align:center;font-weight: bold;">
+meas3
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+A13
+</td>
+<td style="text-align:center;">
+34
+</td>
+<td style="text-align:center;">
+sun
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A15
+</td>
+<td style="text-align:center;">
+87
+</td>
+<td style="text-align:center;">
+sun
+</td>
+<td style="text-align:center;">
+pm
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A15
+</td>
+<td style="text-align:center;">
+65
+</td>
+<td style="text-align:center;">
+moon
+</td>
+<td style="text-align:center;">
+pm
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A16
+</td>
+<td style="text-align:center;">
+33
+</td>
+<td style="text-align:center;">
+moon
+</td>
+<td style="text-align:center;">
+am
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A16
+</td>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+sun
+</td>
+<td style="text-align:center;">
+am
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A14
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+am
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A17
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+pm
+</td>
+</tr>
+</tbody>
+</table>
+<li>
+Data frame <code>U</code>
+</li>
+<table class=" lightable-classic table table-hover table-condensed table-striped" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;font-weight: bold;">
+uniq
+</th>
+<th style="text-align:center;font-weight: bold;">
+meas1
+</th>
+<th style="text-align:center;font-weight: bold;">
+meas2
+</th>
+<th style="text-align:center;font-weight: bold;">
+meas3
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+A13
+</td>
+<td style="text-align:center;">
+34
+</td>
+<td style="text-align:center;">
+sun
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A15
+</td>
+<td style="text-align:center;">
+87
+</td>
+<td style="text-align:center;">
+sun
+</td>
+<td style="text-align:center;">
+pm
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A15
+</td>
+<td style="text-align:center;">
+65
+</td>
+<td style="text-align:center;">
+moon
+</td>
+<td style="text-align:center;">
+pm
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A16
+</td>
+<td style="text-align:center;">
+33
+</td>
+<td style="text-align:center;">
+moon
+</td>
+<td style="text-align:center;">
+am
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A16
+</td>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+sun
+</td>
+<td style="text-align:center;">
+am
+</td>
+</tr>
+</tbody>
+</table>
+<li>
+Data frame <code>T</code>
+</li>
+<table class=" lightable-classic table table-hover table-condensed table-striped" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;font-weight: bold;">
+uniq
+</th>
+<th style="text-align:center;font-weight: bold;">
+meas3
+</th>
+<th style="text-align:center;font-weight: bold;">
+meas1
+</th>
+<th style="text-align:center;font-weight: bold;">
+meas2
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+A14
+</td>
+<td style="text-align:center;">
+am
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A15
+</td>
+<td style="text-align:center;">
+pm
+</td>
+<td style="text-align:center;">
+87
+</td>
+<td style="text-align:center;">
+sun
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A15
+</td>
+<td style="text-align:center;">
+pm
+</td>
+<td style="text-align:center;">
+65
+</td>
+<td style="text-align:center;">
+moon
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A16
+</td>
+<td style="text-align:center;">
+am
+</td>
+<td style="text-align:center;">
+33
+</td>
+<td style="text-align:center;">
+moon
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A16
+</td>
+<td style="text-align:center;">
+am
+</td>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+sun
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A17
+</td>
+<td style="text-align:center;">
+pm
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
 </td>
 </tr>
 </tbody>
 </table>
 </ol>
+<p> </p>
+</div>
+<div id="join-identification-ii" class="section level2">
+<h2>Join Identification II</h2>
+<ol>
+<li>Create data frames in R that match the <code>A</code> and <code>B</code> data frames from the “Join Identification I” question.</li>
+<li>Use join commands in R to create each of the <code>Z</code>, <code>Y</code>, <code>W</code>, <code>V</code>, <code>U</code>, and <code>T</code> data frames in the “Join Identification I” questions from the <code>A</code> and <code>B</code> data frames. Show your code and the complete resulting data frame.</li>
+<li>Reflect on your answers in “Join Identification I” and in the previous question. Were each of your answers correct? Which ones (if any) were not correct and where do you think your reasoning went awry?</li>
+</ol>
+<p> </p>
+</div>
+<div id="food-insecurity-surveys" class="section level2">
+<h2>Food Insecurity Surveys</h2>
+<p>XXX</p>
 </div>
 
 

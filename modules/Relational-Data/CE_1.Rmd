@@ -16,7 +16,7 @@ fnm <- "CE_1"
 dnm <- "modules/Relational-Data"
 modHTML(file.path(here::here(),dnm,fnm))
 FSA::purl2(file.path(here::here(),dnm,paste0(fnm,".Rmd")),
-           moreItems=c("opts_chunk"))
+           moreItems=c("opts_chunk","kable","row_spec"))
 ```
 ```{r echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo=FALSE,results="hide",message=FALSE)
@@ -50,10 +50,10 @@ knitr::kable(B,align="c",caption="Data frame B") %>%
 <!-- for clearing the floats from above -->
 <div style="clear:both;"></div>
 
-What R code would you use to create each of the data frames shown below.
+What kind of join was applied to `A` and `B` to create each data frame below? [*Think deeply about your answers here but note that you will not be graded on your answers to these questions.*]
 
 <ol>
-  <li>Data frame Z</li>
+  <li>Data frame `Z`</li>
 
 ```{r Z}
 Z <- inner_join(A,B,by="uniq")
@@ -65,16 +65,88 @@ knitr::kable(Z,align="c") %>%
   row_spec(0,bold=TRUE)
 ```
 
-  <li>Data frame Y</li>
+  <li>Data frame `Y`</li>
 
 ```{r Y}
 Y <- semi_join(A,B,by="uniq")
 ```
 ```{r results='markup'}
-knitr::kable(Z,align="c") %>%
+knitr::kable(Y,align="c") %>%
+  kable_classic(full_width=FALSE,html_font="Cambria") %>%
+  kable_styling(bootstrap_options=c("hover","condensed","striped")) %>%
+  row_spec(0,bold=TRUE)
+```
+
+  <li>Data frame `X`</li>
+
+```{r X}
+X <- right_join(A,B,by="uniq")
+```
+```{r results='markup'}
+knitr::kable(X,align="c") %>%
+  kable_classic(full_width=FALSE,html_font="Cambria") %>%
+  kable_styling(bootstrap_options=c("hover","condensed","striped")) %>%
+  row_spec(0,bold=TRUE)
+```
+
+  <li>Data frame `W`</li>
+
+```{r W}
+W <- anti_join(A,B,by="uniq")
+```
+```{r results='markup'}
+knitr::kable(W,align="c") %>%
+  kable_classic(full_width=FALSE,html_font="Cambria") %>%
+  kable_styling(bootstrap_options=c("hover","condensed","striped")) %>%
+  row_spec(0,bold=TRUE)
+```
+
+  <li>Data frame `V`</li>
+
+```{r V}
+V <- full_join(A,B,by="uniq")
+```
+```{r results='markup'}
+knitr::kable(V,align="c") %>%
+  kable_classic(full_width=FALSE,html_font="Cambria") %>%
+  kable_styling(bootstrap_options=c("hover","condensed","striped")) %>%
+  row_spec(0,bold=TRUE)
+```
+
+  <li>Data frame `U`</li>
+
+```{r U}
+U <- left_join(A,B,by="uniq")
+```
+```{r results='markup'}
+knitr::kable(U,align="c") %>%
+  kable_classic(full_width=FALSE,html_font="Cambria") %>%
+  kable_styling(bootstrap_options=c("hover","condensed","striped")) %>%
+  row_spec(0,bold=TRUE)
+```
+
+  <li>Data frame `T`</li>
+
+```{r T}
+T <- left_join(B,A,by="uniq")
+```
+```{r results='markup'}
+knitr::kable(T,align="c") %>%
   kable_classic(full_width=FALSE,html_font="Cambria") %>%
   kable_styling(bootstrap_options=c("hover","condensed","striped")) %>%
   row_spec(0,bold=TRUE)
 ```
 
 </ol>
+
+&nbsp;
+
+## Join Identification II
+1. Create data frames in R that match the `A` and `B` data frames from the "Join Identification I" question.
+1. Use join commands in R to create each of the `Z`, `Y`, `W`, `V`, `U`, and `T` data frames in the "Join Identification I" questions from the `A` and `B` data frames. Show your code and the complete resulting data frame.
+1. Reflect on your answers in "Join Identification I" and in the previous question. Were each of your answers correct? Which ones (if any) were not correct and where do you think your reasoning went awry?
+
+&nbsp;
+
+## Food Insecurity Surveys
+XXX
