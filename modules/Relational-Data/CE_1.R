@@ -1,5 +1,17 @@
 library(tidyverse)
 
+G <- data.frame(id=c("A","C","C","B"),
+                val=c(1,2,3,4))
+H <- data.frame(id=c("E","A","B","B","D"),
+                ue=c(9,8,7,6,5))
+
+inner_join(G,H,by="id")
+left_join(G,H,by="id")
+right_join(G,H,by="id")
+full_join(G,H,by="id")
+semi_join(G,H,by="id")
+anti_join(G,H,by="id")
+
 A <- data.frame(uniq=c("A13","A15","A15","A16","A16"),
                 meas1=c(34,87,65,33,12),
                 meas2=c("sun","sun","moon","moon","sun"))
@@ -55,4 +67,4 @@ FIS2 <- right_join(surv,res,by="surv_num")
 FIS2
 
 
-# Script created at 2021-07-24 15:01:37
+# Script created at 2021-07-24 16:26:03

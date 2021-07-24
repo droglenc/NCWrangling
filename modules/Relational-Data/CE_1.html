@@ -9,6 +9,131 @@ css: "/css/modules.css"
 <hr />
 <div id="join-identification-i" class="section level2">
 <h2>Join Identification I</h2>
+<p>Suppose that you have two simple data frames <code>G</code> and <code>H</code>.</p>
+<table class=" lightable-classic table table-hover table-condensed" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; float: left; margin-right: 10px;">
+<caption>
+Data frame G
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;font-weight: bold;">
+id
+</th>
+<th style="text-align:center;font-weight: bold;">
+val
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+A
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+C
+</td>
+<td style="text-align:center;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+C
+</td>
+<td style="text-align:center;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+B
+</td>
+<td style="text-align:center;">
+4
+</td>
+</tr>
+</tbody>
+</table>
+<table class=" lightable-classic table table-hover table-condensed" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; margin-right: 0; margin-left: auto">
+<caption>
+Data frame H
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;font-weight: bold;">
+id
+</th>
+<th style="text-align:center;font-weight: bold;">
+ue
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+E
+</td>
+<td style="text-align:center;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A
+</td>
+<td style="text-align:center;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+B
+</td>
+<td style="text-align:center;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+B
+</td>
+<td style="text-align:center;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+D
+</td>
+<td style="text-align:center;">
+5
+</td>
+</tr>
+</tbody>
+</table>
+<p>For each join situation below identify how many rows and columns you would expect in the resulting data frame. [<em>Think deeply about your answers here but note that you will not be graded on your answers to these questions.</em>]</p>
+<ol>
+<li><code>inner_join(G,H,by="id")</code></li>
+<li><code>left_join(G,H,by="id")</code></li>
+<li><code>right_join(G,H,by="id")</code></li>
+<li><code>full_join(G,H,by="id")</code></li>
+<li><code>semi_join(G,H,by="id")</code></li>
+<li><code>anti_join(G,H,by="id")</code></li>
+</ol>
+<p> </p>
+</div>
+<div id="join-identification-ii" class="section level2">
+<h2>Join Identification II</h2>
+<p>Create data frames in R that match the <code>G</code> and <code>H</code> data frames from the “Join Identification I” question. Check your expected number of row and columns for each join type using the requisite functions in R. Were each of your answers correct? Which ones (if any) were not correct and where do you think your reasoning went awry?</p>
+<p> </p>
+</div>
+<div id="join-identification-iii" class="section level2">
+<h2>Join Identification III</h2>
 <p>Suppose that you have two simple data frames <code>A</code> and <code>B</code>.</p>
 <table class=" lightable-classic table table-hover table-condensed" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; float: left; margin-right: 10px;">
 <caption>
@@ -745,12 +870,12 @@ NA
 </ol>
 <p> </p>
 </div>
-<div id="join-identification-ii" class="section level2">
-<h2>Join Identification II</h2>
+<div id="join-identification-iiii" class="section level2">
+<h2>Join Identification IIII</h2>
 <ol>
-<li>Create data frames in R that match the <code>A</code> and <code>B</code> data frames from the “Join Identification I” question.</li>
-<li>Use join commands in R to create each of the <code>Z</code>, <code>Y</code>, <code>W</code>, <code>V</code>, <code>U</code>, and <code>T</code> data frames in the “Join Identification I” questions from the <code>A</code> and <code>B</code> data frames. Show your code and the complete resulting data frame.</li>
-<li>Reflect on your answers in “Join Identification I” and in the previous question. Were each of your answers correct? Which ones (if any) were not correct and where do you think your reasoning went awry?</li>
+<li>Create data frames in R that match the <code>A</code> and <code>B</code> data frames from the “Join Identification III” question.</li>
+<li>Use join commands in R to create each of the <code>Z</code>, <code>Y</code>, <code>W</code>, <code>V</code>, <code>U</code>, and <code>T</code> data frames in the “Join Identification III” questions from the <code>A</code> and <code>B</code> data frames. Show your code and the complete resulting data frame.</li>
+<li>Reflect on your answers in “Join Identification III” and in the previous question. Were each of your answers correct? Which ones (if any) were not correct and where do you think your reasoning went awry?</li>
 </ol>
 <p> </p>
 </div>

@@ -27,6 +27,52 @@ library(kableExtra)
 ----
 
 ## Join Identification I
+Suppose that you have two simple data frames `G` and `H`.
+
+```{r GH, echo=FALSE}
+G <- data.frame(id=c("A","C","C","B"),
+                val=c(1,2,3,4))
+H <- data.frame(id=c("E","A","B","B","D"),
+                ue=c(9,8,7,6,5))
+```
+```{r results='markup'}
+knitr::kable(G,align="c",caption="Data frame G") %>%
+  kable_classic(full_width=FALSE,html_font="Cambria") %>%
+  kable_styling(bootstrap_options=c("hover","condensed"),position="float_left") %>%
+  row_spec(0,bold=TRUE)
+knitr::kable(H,align="c",caption="Data frame H") %>%
+  kable_classic(full_width=FALSE,html_font="Cambria") %>%
+  kable_styling(bootstrap_options=c("hover","condensed"),position="right") %>%
+  row_spec(0,bold=TRUE)
+```
+
+For each join situation below identify how many rows and columns you would expect in the resulting data frame. [*Think deeply about your answers here but note that you will not be graded on your answers to these questions.*]
+
+
+1. `inner_join(G,H,by="id")`
+1. `left_join(G,H,by="id")`
+1. `right_join(G,H,by="id")`
+1. `full_join(G,H,by="id")`
+1. `semi_join(G,H,by="id")`
+1. `anti_join(G,H,by="id")`
+
+&nbsp;
+
+## Join Identification II
+Create data frames in R that match the `G` and `H` data frames from the "Join Identification I" question. Check your expected number of row and columns for each join type using the requisite functions in R. Were each of your answers correct? Which ones (if any) were not correct and where do you think your reasoning went awry?
+
+```{r}
+inner_join(G,H,by="id")
+left_join(G,H,by="id")
+right_join(G,H,by="id")
+full_join(G,H,by="id")
+semi_join(G,H,by="id")
+anti_join(G,H,by="id")
+```
+
+&nbsp;
+
+## Join Identification III
 Suppose that you have two simple data frames `A` and `B`.
 
 ```{r AB, echo=FALSE}
@@ -141,10 +187,10 @@ knitr::kable(T,align="c") %>%
 
 &nbsp;
 
-## Join Identification II
-1. Create data frames in R that match the `A` and `B` data frames from the "Join Identification I" question.
-1. Use join commands in R to create each of the `Z`, `Y`, `W`, `V`, `U`, and `T` data frames in the "Join Identification I" questions from the `A` and `B` data frames. Show your code and the complete resulting data frame.
-1. Reflect on your answers in "Join Identification I" and in the previous question. Were each of your answers correct? Which ones (if any) were not correct and where do you think your reasoning went awry?
+## Join Identification IIII
+1. Create data frames in R that match the `A` and `B` data frames from the "Join Identification III" question.
+1. Use join commands in R to create each of the `Z`, `Y`, `W`, `V`, `U`, and `T` data frames in the "Join Identification III" questions from the `A` and `B` data frames. Show your code and the complete resulting data frame.
+1. Reflect on your answers in "Join Identification III" and in the previous question. Were each of your answers correct? Which ones (if any) were not correct and where do you think your reasoning went awry?
 
 &nbsp;
 
