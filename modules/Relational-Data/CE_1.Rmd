@@ -50,9 +50,11 @@ knitr::kable(B,align="c",caption="Data frame B") %>%
 <!-- for clearing the floats from above -->
 <div style="clear:both;"></div>
 
-Write what R code would be used to create each of the data frames shown below.
+What R code would you use to create each of the data frames shown below.
 
-1. Data frame Z
+<ol>
+  <li>Data frame Z</li>
+
 ```{r Z}
 Z <- inner_join(A,B,by="uniq")
 ```
@@ -63,7 +65,8 @@ knitr::kable(Z,align="c") %>%
   row_spec(0,bold=TRUE)
 ```
 
-2. Data frame Y
+  <li>Data frame Y</li>
+
 ```{r Y}
 Y <- semi_join(A,B,by="uniq")
 ```
@@ -74,3 +77,4 @@ knitr::kable(Z,align="c") %>%
   row_spec(0,bold=TRUE)
 ```
 
+</ol>
