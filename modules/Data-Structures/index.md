@@ -42,4 +42,4 @@ XXX
 
 ## Resources
 
-* XXX.
+* [Tidy Data](https://r4ds.had.co.nz/tidy-data.html) chapter of [*R fr Data Science*](https://r4ds.had.co.nz/index.html).

@@ -42,4 +42,4 @@ XXX
 
 ## Resources
 
-* XXX.
+* [Factors](https://r4ds.had.co.nz/factors.html) chapter of [*R fr Data Science*](https://r4ds.had.co.nz/index.html).

@@ -42,4 +42,4 @@ XXX
 
 ## Resources
 
-* XXX.
+* [Relational Data](https://r4ds.had.co.nz/relational-data.html) chapter of [*R fr Data Science*](https://r4ds.had.co.nz/index.html).

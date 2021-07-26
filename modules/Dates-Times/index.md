@@ -42,4 +42,4 @@ XXX
 
 ## Resources
 
-* XXX.
+* [Dates and Times](https://r4ds.had.co.nz/dates-and-times.html) chapter of [*R fr Data Science*](https://r4ds.had.co.nz/index.html).
