@@ -11,7 +11,7 @@ title: Learning Modules
 1. [Relational Data](Relational-Data/)
 1. [Pivot](Pivot)
 1. [Filter and Select](Filter-Select/)
-1. [Add New Variables](Mutate/)
+1. [Add New Variables](Add-New-Variables/)
 1. [Groupings](Groupings/)
 1. [Dates and Times](Dates-Times/)
 1. [Factors](Factors/)
