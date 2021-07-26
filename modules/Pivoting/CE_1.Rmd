@@ -26,23 +26,32 @@ library(kableExtra)
 
 ----
 
-## Pivot Identification I
+## Tidy Data Identification
+For each data frame below identify whether the data are in tidy format or not. Provide reasoning for your answer.
 
-```{r ABC, echo=FALSE}
+```{r A, echo=FALSE}
 A <- data.frame(dog=1:4,
                 breed=c("Sheltie","Black Lab","German Shepherd","Sheltie"),
                 height=c(17,18,29,14),
                 weight=c(27,45,58,19))
+```
+```{r B, echo=FALSE}
 B <- data.frame(student=1:5,
                 name=c("Jamila","Frank","Rose","Courtney","Lavelle"),
                 year=c("JR","SR","SR","SO","JR"),
                 pretest=c(84,76,65,85,81),
                 posttest=c(91,88,77,86,91))
+B2 <- pivot_longer(B,cols=ends_with("test"),values_to="score",names_to="test")
+B2
+```
+```{r C, echo=FALSE}
 C <- data.frame(county=rep(c("Ramsey","Hennepin","Dakota"),times=3),
                 type=rep(c("size","population","established"),each=3),
                 info=c(155.78,556.62,569.58,
                        508640,1152425,398552,
                        1849,1852,1849))
+C2 <- pivot_wider(C,names_from=type,values_from=info)
+C2
 ```
 ```{r results='markup'}
 knitr::kable(A,align="c",caption="Data frame A") %>%
@@ -65,4 +74,44 @@ knitr::kable(C,align="c",caption="Data frame C") %>%
   row_spec(0,bold=TRUE)
 ```
 
+&nbsp;
+
+## Pivoting I
+For each situation below identify the number of rows and columns in the new pivoted data frame. [*Think deeply about your answers here but note that you will not be graded on your answers to these questions.*]
+
+1. Pivot data frame `B` in such a manner that pre- and post-test scores will be in one column (each test score will be in its own row of this column) with a separate column that indicates whether the test score is from a pre- or post-test.
+1. Pivot data frame `C` in such a manner that the "items" listed under `type` will be separated into new columns with the corresponding values under `info` in each column.
+
+&nbsp;
+
+## Pivoting II
+For each situation in "Pivoting I" enter the original data frame in R, pivot the data to a new data frame showing your R code, and show the final pivoted data frame. From these results reflect on your answers in "Pivoting I." Were each of your answers correct? Which ones (if any) were not correct and where do you think your reasoning went awry? 
+
+&nbsp;
+
+## Wisconsin Deer Harvest
+The number of antlered deer harvested per year in five counties in northern Wisconsin were recorded in [WIDeer.xlsx](https://github.com/droglenc/NCWrangling/raw/main/resources/data/WIDeer.xlsx). Examine and load these data into R to answer the following questions.
+
+1. Are these data tidy? Explain.
+1. Pivot these data into a tidy format (that will easy plotting of number harvested per year separated by county). Show your R code and resulting data frame.
+
+```{r}
+WD <- readxl::read_excel(file.path("..","..","resources","data","WIDeer.xlsx"))
+WD2 <- pivot_longer(WD,cols=-Country,names_to="year",values_to="harvest")
+WD2
+```
+
+&nbsp;
+
+## Fish Tagging Data
+Northland students have individually tagged many fish on Inch Lake. Some of these fish are later recaptured. For each encounter the fish species, unique tag number, capture date, total length (inches), and weight (g) is recorded. In addition, a variable called `recap` is created which is 0 for the first encounter with the fish (the tagging time) and 1 for the second encounter (the recapture time). These data are recorded in [InchLakeTags.xlsx](https://github.com/droglenc/NCWrangling/raw/main/resources/data/InchLakeTags.xlsx).
+
+Load these data into R and wrangle the data into a new data frame that will allow three new variables to be created -- amount of time between captures (i.e., between tagging and recapture), change in total length between captures, and change in weight between captures. You do not need to calculate these new variables (you will do this in a future exercise). Show all of your code and your final data frame.
+
+```{r}
+IL <- readxl::read_excel(file.path("..","..","resources","data","InchLakeTags.xlsx"),
+                         sheet="data")
+IL2 <- pivot_wider(IL,names_from=recap_time,values_from=c(sDate,tl,w))
+IL2
+```
 

@@ -7,8 +7,9 @@ css: "/css/modules.css"
 
 
 <hr />
-<div id="pivot-identification-i" class="section level2">
-<h2>Pivot Identification I</h2>
+<div id="tidy-data-identification" class="section level2">
+<h2>Tidy Data Identification</h2>
+<p>For each data frame below identify whether the data are in tidy format or not. Provide reasoning for your answer.</p>
 <table class=" lightable-classic table table-hover table-condensed" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; float: left; margin-right: 10px;">
 <caption>
 Data frame A
@@ -322,6 +323,35 @@ established
 </tr>
 </tbody>
 </table>
+<p> </p>
+</div>
+<div id="pivoting-i" class="section level2">
+<h2>Pivoting I</h2>
+<p>For each situation below identify the number of rows and columns in the new pivoted data frame. [<em>Think deeply about your answers here but note that you will not be graded on your answers to these questions.</em>]</p>
+<ol>
+<li>Pivot data frame <code>B</code> in such a manner that pre- and post-test scores will be in one column (each test score will be in its own row of this column) with a separate column that indicates whether the test score is from a pre- or post-test.</li>
+<li>Pivot data frame <code>C</code> in such a manner that the “items” listed under <code>type</code> will be separated into new columns with the corresponding values under <code>info</code> in each column.</li>
+</ol>
+<p> </p>
+</div>
+<div id="pivoting-ii" class="section level2">
+<h2>Pivoting II</h2>
+<p>For each situation in “Pivoting I” enter the original data frame in R, pivot the data to a new data frame showing your R code, and show the final pivoted data frame. From these results reflect on your answers in “Pivoting I.” Were each of your answers correct? Which ones (if any) were not correct and where do you think your reasoning went awry?</p>
+<p> </p>
+</div>
+<div id="wisconsin-deer-harvest" class="section level2">
+<h2>Wisconsin Deer Harvest</h2>
+<p>The number of antlered deer harvested per year in five counties in northern Wisconsin were recorded in <a href="https://github.com/droglenc/NCWrangling/raw/main/resources/data/WIDeer.xlsx">WIDeer.xlsx</a>. Examine and load these data into R to answer the following questions.</p>
+<ol>
+<li>Are these data tidy? Explain.</li>
+<li>Pivot these data into a tidy format (that will easy plotting of number harvested per year separated by county). Show your R code and resulting data frame.</li>
+</ol>
+<p> </p>
+</div>
+<div id="fish-tagging-data" class="section level2">
+<h2>Fish Tagging Data</h2>
+<p>Northland students have individually tagged many fish on Inch Lake. Some of these fish are later recaptured. For each encounter the fish species, unique tag number, capture date, total length (inches), and weight (g) is recorded. In addition, a variable called <code>recap</code> is created which is 0 for the first encounter with the fish (the tagging time) and 1 for the second encounter (the recapture time). These data are recorded in <a href="https://github.com/droglenc/NCWrangling/raw/main/resources/data/InchLakeTags.xlsx">InchLakeTags.xlsx</a>.</p>
+<p>Load these data into R and wrangle the data into a new data frame that will allow three new variables to be created – amount of time between captures (i.e., between tagging and recapture), change in total length between captures, and change in weight between captures. You do not need to calculate these new variables (you will do this in a future exercise). Show all of your code and your final data frame.</p>
 </div>
 
 
