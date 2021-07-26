@@ -15,4 +15,4 @@ C <- data.frame(county=rep(c("Ramsey","Hennepin","Dakota"),times=2),
                 info=c(155.78,508640,556.62,1152425,569.58,398.552))
 
 
-# Script created at 2021-07-26 10:40:28
+# Script created at 2021-07-26 10:42:56

@@ -50,8 +50,14 @@ knitr::kable(A,align="c",caption="Data frame A") %>%
   row_spec(0,bold=TRUE)
 knitr::kable(B,align="c",caption="Data frame B") %>%
   kable_classic(full_width=FALSE,html_font="Cambria") %>%
-  kable_styling(bootstrap_options=c("hover","condensed"),position="float_left") %>%
+  kable_styling(bootstrap_options=c("hover","condensed"),position="right") %>%
   row_spec(0,bold=TRUE)
+```
+
+<!-- for clearing the floats from above -->
+<div style="clear:both;"></div>
+
+```{r results='markup'}
 knitr::kable(C,align="c",caption="Data frame C") %>%
   kable_classic(full_width=FALSE,html_font="Cambria") %>%
   kable_styling(bootstrap_options=c("hover","condensed"),position="right") %>%
