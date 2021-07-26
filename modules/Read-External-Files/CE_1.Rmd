@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Exercise - Reading External Files
+title: Exercise - Read External Files
 author: Derek H. Ogle
 css: "/css/modules.css"
 output:
@@ -13,7 +13,7 @@ output:
 # Renders an appropriate HTML file for the webpage (CTRL-S and CTRL-ALT-R)
 source(file.path(here::here(),"rhelpers/rhelpers.R"))
 fnm <- "CE_1"
-dnm <- "modules/Reading-External-Files"
+dnm <- "modules/Read-External-Files"
 modHTML(file.path(here::here(),dnm,fnm))
 FSA::purl2(file.path(here::here(),dnm,paste0(fnm,".Rmd")),
            moreItems=c("opts_chunk"))

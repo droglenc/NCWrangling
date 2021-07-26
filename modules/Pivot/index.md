@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Pivoting
+title: Pivot
 css: /css/modules.css
 ---
 
@@ -28,7 +28,7 @@ XXX
 
 ## Preparation for Class
 
-* [Reading](http://derekogle.com/BookWrangling/pivoting.html){:target="_blank"}.
+* [Reading](http://derekogle.com/BookWrangling/pivot.html){:target="_blank"}.
 
 ----
 

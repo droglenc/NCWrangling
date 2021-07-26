@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Reading External Files
+title: Read External Files
 css: /css/modules.css
 ---
 
@@ -28,7 +28,7 @@ XXX
 
 ## Preparation for Class
 
-* [Reading](http://derekogle.com/BookWrangling/reading-external-files.html){:target="_blank"}.
+* [Reading](http://derekogle.com/BookWrangling/read-external-files.html){:target="_blank"}.
 
 ----
 

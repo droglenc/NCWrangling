@@ -7,14 +7,17 @@ title: Learning Modules
 
 1. [Course Organization](Setup/)
 1. [Data Structures in R](Data-Structures/)
-1. [Reading External Files](Reading-External-Files/)
+1. [Read External Files](Read-External-Files/)
 1. [Relational Data](Relational-Data/)
-1. [Pivoting](Pivoting)
-1. Filtering and Selecting
-1. Adding New Variables
-1. Grouping
-1. 
-1. 
+1. [Pivot](Pivot)
+1. [Filter and Select](Filter-Select/)
+1. [Add New Variables](Mutate/)
+1. [Groupings](Groupings/)
+1. [Dates and Times](Dates-Times/)
+1. [Factors](Factors/)
+1. Case Study I
+1. Case Study II
+1. Project Work
 
 #### Extras
 * XXX
