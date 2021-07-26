@@ -1,0 +1,339 @@
+---
+layout: page
+title: Exercise - Pivoting
+author: Derek H. Ogle
+css: "/css/modules.css"
+---
+
+
+<hr />
+<div id="pivot-identification-i" class="section level2">
+<h2>Pivot Identification I</h2>
+<table class=" lightable-classic table table-hover table-condensed" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; float: left; margin-right: 10px;">
+<caption>
+Data frame A
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;font-weight: bold;">
+student
+</th>
+<th style="text-align:center;font-weight: bold;">
+name
+</th>
+<th style="text-align:center;font-weight: bold;">
+year
+</th>
+<th style="text-align:center;font-weight: bold;">
+pretest
+</th>
+<th style="text-align:center;font-weight: bold;">
+posttest
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+Jamila
+</td>
+<td style="text-align:center;">
+JR
+</td>
+<td style="text-align:center;">
+84
+</td>
+<td style="text-align:center;">
+91
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+Frank
+</td>
+<td style="text-align:center;">
+SR
+</td>
+<td style="text-align:center;">
+76
+</td>
+<td style="text-align:center;">
+88
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+Rose
+</td>
+<td style="text-align:center;">
+SR
+</td>
+<td style="text-align:center;">
+65
+</td>
+<td style="text-align:center;">
+77
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+Courtney
+</td>
+<td style="text-align:center;">
+SO
+</td>
+<td style="text-align:center;">
+85
+</td>
+<td style="text-align:center;">
+86
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+Lavelle
+</td>
+<td style="text-align:center;">
+JR
+</td>
+<td style="text-align:center;">
+81
+</td>
+<td style="text-align:center;">
+91
+</td>
+</tr>
+</tbody>
+</table>
+<table class=" lightable-classic table table-hover table-condensed" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; float: left; margin-right: 10px;">
+<caption>
+Data frame B
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;font-weight: bold;">
+student
+</th>
+<th style="text-align:center;font-weight: bold;">
+name
+</th>
+<th style="text-align:center;font-weight: bold;">
+year
+</th>
+<th style="text-align:center;font-weight: bold;">
+pretest
+</th>
+<th style="text-align:center;font-weight: bold;">
+posttest
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+Jamila
+</td>
+<td style="text-align:center;">
+JR
+</td>
+<td style="text-align:center;">
+84
+</td>
+<td style="text-align:center;">
+91
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+Frank
+</td>
+<td style="text-align:center;">
+SR
+</td>
+<td style="text-align:center;">
+76
+</td>
+<td style="text-align:center;">
+88
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+Rose
+</td>
+<td style="text-align:center;">
+SR
+</td>
+<td style="text-align:center;">
+65
+</td>
+<td style="text-align:center;">
+77
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+Courtney
+</td>
+<td style="text-align:center;">
+SO
+</td>
+<td style="text-align:center;">
+85
+</td>
+<td style="text-align:center;">
+86
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+Lavelle
+</td>
+<td style="text-align:center;">
+JR
+</td>
+<td style="text-align:center;">
+81
+</td>
+<td style="text-align:center;">
+91
+</td>
+</tr>
+</tbody>
+</table>
+<table class=" lightable-classic table table-hover table-condensed" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; margin-right: 0; margin-left: auto">
+<caption>
+Data frame C
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;font-weight: bold;">
+id
+</th>
+<th style="text-align:center;font-weight: bold;">
+ue
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+E
+</td>
+<td style="text-align:center;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+A
+</td>
+<td style="text-align:center;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+B
+</td>
+<td style="text-align:center;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+B
+</td>
+<td style="text-align:center;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+D
+</td>
+<td style="text-align:center;">
+5
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
