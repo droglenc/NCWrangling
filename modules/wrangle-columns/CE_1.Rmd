@@ -26,5 +26,51 @@ library(kableExtra)
 
 ----
 
-## XXX
+## Lake Erie Walleye
+Lake Erie is world-renowned for its Walleye (*Sander vitreus*) population and fishing. The Ohio Department of Natural Resources samples Walleye with gillnets from three regions of Lake Erie every fall. Their results from 2003-2014 are stored in [this file](https://raw.githubusercontent.com/droglenc/FSAdata/master/data-raw/WalleyeErie2.csv) from the fishR webpage. [Metadata for the data file is here(http://derekogle.com/fishR/data/data-html/WalleyeErie2.html). The following tasks should be completed to prepare these data for further analysis.
 
+* The regional sampling location should be converted from their numerical codes (1, 2, 3) to their actual regional names.
+* A standard weight variable should be computed from the observed lengths with this formula -- 0.00000352*LENGTH<sup>3.18</sup>.
+* A relative weight variable should be computed by dividing the observed weight by the calculated standard weight and multiplying by 100.
+* Create a new variable that has the words under "status" based on the lengths under "length".
+
+| status | lengths (mm) |
+|:------:|:-------:|
+| substock | 0-249 |
+| stock | 250-379 |
+| quality | 380-509 |
+| preferred | 510-629 |
+| memorable | 630-759 |
+| trophy | 760+ |
+
+* The "stock status" variable (i.e., "substock", "stock", etc.) variable should immediately follow the length variable.
+* The standard and relative weight variables should immediately follow the observed weight variable.
+* The gear set identification, sampling grid location, and maturity variables should be removed.
+* The year variable should be moved to be the first variable.
+* The otolith age variable should be moved to before the sex variable.
+
+```{r}
+wae <- read_csv("https://raw.githubusercontent.com/droglenc/FSAdata/master/data-raw/WalleyeErie2.csv") %>%
+  select(-setID,-grid,-mat) %>%
+  mutate(loc=plyr::mapvalues(loc,from=c(1,2,3),
+              to=c("Toledo-Huron","Huron-Fairport","Fairport-Conneaut")),
+         ws=0.00000352*(tl^3.18),
+         wr=w/ws*100,
+         status=case_when(
+           tl<250 ~ "substock",
+           tl<380 ~ "stock",
+           tl<510 ~ "quality",
+           tl<630 ~ "preferred",
+           tl<760 ~ "memorable",
+           TRUE ~ "trophy"
+         )) %>%
+  relocate(year) %>%
+  relocate(status,.after=tl) %>%
+  relocate(ws,wr,.after=w) %>%
+  relocate(age,.before=sex)
+wae
+```
+
+&nbsp;
+
+## NEED ANOTHER HERE
