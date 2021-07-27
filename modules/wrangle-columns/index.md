@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Add New Variables
+title: Wrangle Columns
 css: /css/modules.css
 ---
 
@@ -28,7 +28,7 @@ XXX
 
 ## Preparation for Class
 
-* [Reading](http://derekogle.com/BookWrangling/add-new-variables.html){:target="_blank"}.
+* [Reading](http://derekogle.com/BookWrangling/wrangle-columns.html){:target="_blank"}.
 
 ----
 
@@ -42,4 +42,4 @@ XXX
 
 ## Resources
 
-* XXX.
+* [Data Transformation](https://r4ds.had.co.nz/data-transformation.html) chapter of [*R fr Data Science*](https://r4ds.had.co.nz/index.html).

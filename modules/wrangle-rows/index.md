@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Filter and Select
+title: Wrangle Rows
 css: /css/modules.css
 ---
 
@@ -28,7 +28,7 @@ XXX
 
 ## Preparation for Class
 
-* [Reading](http://derekogle.com/BookWrangling/filter-select.html){:target="_blank"}.
+* [Reading](http://derekogle.com/BookWrangling/wrangle-rows.html){:target="_blank"}.
 
 ----
 
@@ -42,4 +42,4 @@ XXX
 
 ## Resources
 
-* [Data Transformation](https://r4ds.had.co.nz/data-transformation.html) chapter of [*R fr Data Science*](https://r4ds.had.co.nz/index.html).
+* XXX.
