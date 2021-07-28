@@ -1,10 +1,5 @@
 library(tidyverse)
 
-library(FSA)
-tmp <- psdVal("Walleye")
-tibble(status=names(tmp),
-       `lengths (mm)`=paste0(tmp,c(rep("-",5),"+"),c(tmp[-1]-1,""))) %>%
-
 wae <- read_csv("https://raw.githubusercontent.com/droglenc/FSAdata/master/data-raw/WalleyeErie2.csv") %>%
   select(-setID,-grid,-mat) %>%
   mutate(loc=plyr::mapvalues(loc,from=c(1,2,3),
@@ -57,4 +52,4 @@ ffr3 <- left_join(ffr2,fli,by="site") %>%
 ffr3
 
 
-# Script created at 2021-07-28 16:28:40
+# Script created at 2021-07-28 16:38:34

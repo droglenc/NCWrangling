@@ -11,15 +11,79 @@ css: "/css/modules.css"
 <h2>Lake Erie Walleye</h2>
 <p>Lake Erie is world-renowned for its Walleye (<em>Sander vitreus</em>) population and fishing. The Ohio Department of Natural Resources samples Walleye with gillnets from three regions of Lake Erie every fall. Their results from 2003-2014 are stored in <a href="https://raw.githubusercontent.com/droglenc/FSAdata/master/data-raw/WalleyeErie2.csv">this file</a> from the fishR webpage. [Metadata for the data file is here(<a href="http://derekogle.com/fishR/data/data-html/WalleyeErie2.html" class="uri">http://derekogle.com/fishR/data/data-html/WalleyeErie2.html</a>). The following tasks should be completed to prepare these data for further analysis.</p>
 <ul>
-<li><p>The regional sampling location should be converted from their numerical codes (1, 2, 3) to their actual regional names.</p></li>
-<li><p>A standard weight variable should be computed from the observed lengths with this formula – 0.00000352*LENGTH<sup>3.18</sup>.</p></li>
-<li><p>A relative weight variable should be computed by dividing the observed weight by the calculated standard weight and multiplying by 100.</p></li>
-<li><p>Create a new variable that has the words under “status” based on the lengths under “length”.</p></li>
-<li><p>The “stock status” variable (i.e., “substock”, “stock”, etc.) variable should immediately follow the length variable.</p></li>
-<li><p>The standard and relative weight variables should immediately follow the observed weight variable.</p></li>
-<li><p>The gear set identification, sampling grid location, and maturity variables should be removed.</p></li>
-<li><p>The year variable should be moved to be the first variable.</p></li>
-<li><p>The otolith age variable should be moved to before the sex variable.</p></li>
+<li>The regional sampling location should be converted from their numerical codes (1, 2, 3) to their actual regional names.</li>
+<li>A standard weight variable should be computed from the observed lengths with this formula – 0.00000352*LENGTH<sup>3.18</sup>.</li>
+<li>A relative weight variable should be computed by dividing the observed weight by the calculated standard weight and multiplying by 100.</li>
+<li>Create a new variable that has the words under “status” based on the lengths under “length”.</li>
+</ul>
+<table class=" lightable-classic lightable-hover" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;">
+status
+</th>
+<th style="text-align:center;font-weight: bold;">
+lengths (mm)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+substock
+</td>
+<td style="text-align:center;">
+0-249
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+stock
+</td>
+<td style="text-align:center;">
+250-379
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+quality
+</td>
+<td style="text-align:center;">
+380-509
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+preferred
+</td>
+<td style="text-align:center;">
+510-629
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+memorable
+</td>
+<td style="text-align:center;">
+630-759
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+trophy
+</td>
+<td style="text-align:center;">
+760+
+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The “stock status” variable (i.e., “substock”, “stock”, etc.) variable should immediately follow the length variable.</li>
+<li>The standard and relative weight variables should immediately follow the observed weight variable.</li>
+<li>The gear set identification, sampling grid location, and maturity variables should be removed.</li>
+<li>The year variable should be moved to be the first variable.</li>
+<li>The otolith age variable should be moved to before the sex variable.</li>
 </ul>
 <p> </p>
 </div>
