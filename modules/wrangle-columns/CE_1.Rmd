@@ -139,6 +139,6 @@ ffr3 <- left_join(ffr2,fli,by="site") %>%
 
 In the end, our data frame should be similar to this one (same number of rows and columns, but perhaps different variable names).
 
-```{r results='asis'}
+```{r results='hold'}
 ffr3
 ```

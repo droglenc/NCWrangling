@@ -111,10 +111,22 @@ trophy
 </ul>
 <p>Use the two modified data frames from above to add lake information (i.e., development, lake area, alkalinity, and ph) to the frog results. [<em>Hint: This requires a join</em>] Make sure the lake information immediately follows the site/location name.</p>
 <p>In the end, our data frame should be similar to this one (same number of rows and columns, but perhaps different variable names).</p>
-</div>
-<div id="a-tibble-2904-x-14" class="section level1">
-<h1>A tibble: 2,904 x 14</h1>
-<p>site type Area Alk pH DATE Run air_temp <chr> <chr> <dbl> <dbl> <dbl> <dttm> <dbl> <dbl> 1 Muskellu~ Devel~ 2.4 20 6.8 1997-05-10 00:00:00 1 48 2 Muskellu~ Devel~ 2.4 20 6.8 1997-05-10 00:00:00 1 48 3 Muskellu~ Devel~ 2.4 20 6.8 1997-05-10 00:00:00 1 48 4 Muskellu~ Devel~ 2.4 20 6.8 1997-05-10 00:00:00 1 48 5 Muskellu~ Devel~ 2.4 20 6.8 1997-05-10 00:00:00 1 48 6 Muskellu~ Devel~ 2.4 20 6.8 1997-05-10 00:00:00 1 48 7 Muskellu~ Devel~ 2.4 20 6.8 1997-05-10 00:00:00 1 48 8 Muskellu~ Devel~ 2.4 20 6.8 1997-05-10 00:00:00 1 48 9 Muskellu~ Devel~ 2.4 20 6.8 1997-05-10 00:00:00 1 48 10 Muskellu~ Devel~ 2.4 20 6.8 1997-05-10 00:00:00 1 48 # … with 2,894 more rows, and 6 more variables: water_temp <dbl>, # Surveyor <chr>, pairVP <dbl>, species <chr>, count <dbl>, # occurrence <chr></p>
+<pre><code>## # A tibble: 2,904 x 14
+##    site      type    Area   Alk    pH DATE                  Run air_temp
+##    &lt;chr&gt;     &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dttm&gt;              &lt;dbl&gt;    &lt;dbl&gt;
+##  1 Muskellu~ Devel~   2.4    20   6.8 1997-05-10 00:00:00     1       48
+##  2 Muskellu~ Devel~   2.4    20   6.8 1997-05-10 00:00:00     1       48
+##  3 Muskellu~ Devel~   2.4    20   6.8 1997-05-10 00:00:00     1       48
+##  4 Muskellu~ Devel~   2.4    20   6.8 1997-05-10 00:00:00     1       48
+##  5 Muskellu~ Devel~   2.4    20   6.8 1997-05-10 00:00:00     1       48
+##  6 Muskellu~ Devel~   2.4    20   6.8 1997-05-10 00:00:00     1       48
+##  7 Muskellu~ Devel~   2.4    20   6.8 1997-05-10 00:00:00     1       48
+##  8 Muskellu~ Devel~   2.4    20   6.8 1997-05-10 00:00:00     1       48
+##  9 Muskellu~ Devel~   2.4    20   6.8 1997-05-10 00:00:00     1       48
+## 10 Muskellu~ Devel~   2.4    20   6.8 1997-05-10 00:00:00     1       48
+## # ... with 2,894 more rows, and 6 more variables: water_temp &lt;dbl&gt;,
+## #   Surveyor &lt;chr&gt;, pairVP &lt;dbl&gt;, species &lt;chr&gt;, count &lt;dbl&gt;,
+## #   occurrence &lt;chr&gt;</code></pre>
 </div>
 
 
