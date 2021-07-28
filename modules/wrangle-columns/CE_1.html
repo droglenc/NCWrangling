@@ -11,56 +11,46 @@ css: "/css/modules.css"
 <h2>Lake Erie Walleye</h2>
 <p>Lake Erie is world-renowned for its Walleye (<em>Sander vitreus</em>) population and fishing. The Ohio Department of Natural Resources samples Walleye with gillnets from three regions of Lake Erie every fall. Their results from 2003-2014 are stored in <a href="https://raw.githubusercontent.com/droglenc/FSAdata/master/data-raw/WalleyeErie2.csv">this file</a> from the fishR webpage. [Metadata for the data file is here(<a href="http://derekogle.com/fishR/data/data-html/WalleyeErie2.html" class="uri">http://derekogle.com/fishR/data/data-html/WalleyeErie2.html</a>). The following tasks should be completed to prepare these data for further analysis.</p>
 <ul>
-<li>The regional sampling location should be converted from their numerical codes (1, 2, 3) to their actual regional names.</li>
-<li>A standard weight variable should be computed from the observed lengths with this formula – 0.00000352*LENGTH<sup>3.18</sup>.</li>
-<li>A relative weight variable should be computed by dividing the observed weight by the calculated standard weight and multiplying by 100.</li>
-<li>Create a new variable that has the words under “status” based on the lengths under “length”.</li>
-</ul>
-<table>
-<thead>
-<tr class="header">
-<th align="center">status</th>
-<th align="center">lengths (mm)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">substock</td>
-<td align="center">0-249</td>
-</tr>
-<tr class="even">
-<td align="center">stock</td>
-<td align="center">250-379</td>
-</tr>
-<tr class="odd">
-<td align="center">quality</td>
-<td align="center">380-509</td>
-</tr>
-<tr class="even">
-<td align="center">preferred</td>
-<td align="center">510-629</td>
-</tr>
-<tr class="odd">
-<td align="center">memorable</td>
-<td align="center">630-759</td>
-</tr>
-<tr class="even">
-<td align="center">trophy</td>
-<td align="center">760+</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>The “stock status” variable (i.e., “substock”, “stock”, etc.) variable should immediately follow the length variable.</li>
-<li>The standard and relative weight variables should immediately follow the observed weight variable.</li>
-<li>The gear set identification, sampling grid location, and maturity variables should be removed.</li>
-<li>The year variable should be moved to be the first variable.</li>
-<li>The otolith age variable should be moved to before the sex variable.</li>
+<li><p>The regional sampling location should be converted from their numerical codes (1, 2, 3) to their actual regional names.</p></li>
+<li><p>A standard weight variable should be computed from the observed lengths with this formula – 0.00000352*LENGTH<sup>3.18</sup>.</p></li>
+<li><p>A relative weight variable should be computed by dividing the observed weight by the calculated standard weight and multiplying by 100.</p></li>
+<li><p>Create a new variable that has the words under “status” based on the lengths under “length”.</p></li>
+<li><p>The “stock status” variable (i.e., “substock”, “stock”, etc.) variable should immediately follow the length variable.</p></li>
+<li><p>The standard and relative weight variables should immediately follow the observed weight variable.</p></li>
+<li><p>The gear set identification, sampling grid location, and maturity variables should be removed.</p></li>
+<li><p>The year variable should be moved to be the first variable.</p></li>
+<li><p>The otolith age variable should be moved to before the sex variable.</p></li>
 </ul>
 <p> </p>
 </div>
-<div id="need-another-here" class="section level2">
-<h2>NEED ANOTHER HERE</h2>
+<div id="northern-wisconsin-frogs" class="section level2">
+<h2>Northern Wisconsin Frogs</h2>
+<p>A researcher at the Sigurd Olson Environmental Institute conducted a frog call survey in the late 1990s to better understand populations of frogs in northern Wisconsin. The study design required either a resource professional or a trained volunteer to sit at a site on randomly selected lakes and listen for frog calls. From listening to these calls the person would ascertain the number of individuals present of each eleven species of frogs. The surveys were repeated at each site between one and three times.</p>
+<p>The data from this study is stored in <a href="https://github.com/droglenc/NCWrangling/raw/main/resources/data/FrogsSOEI.xlsx">FrogsSOEI.xlsx</a> with information about the sampling locations in the “LakeInfo” sheet and results about the frogs for each sampling event in the “FrogResults” sheet. More detailed information about what is on each sheet is in the “meta” sheet.</p>
+<p>Load the lake information sheet and make the following modifications. [<em>Hint: Examine the spreadsheet closely and make sure to adjust for how missing values were coded in the spreadsheet.</em>]</p>
+<ul>
+<li>Fix all non-standard names.</li>
+<li>Make the values in the development variables more informative.</li>
+</ul>
+<p>Load the frog call results sheet and make the following modifications.</p>
+<ul>
+<li>Fix all non-standard names.</li>
+<li>Remove the comments variable.</li>
+<li>Make the values in the surveyor variable more informative</li>
+</ul>
+<p>Following these three modifications to the frog results data frame create a new data frame with the following modifications</p>
+<ul>
+<li>Create new variables that have the counts for each frog species in one variable and a related variable that has the name of the frog species in it. [<em>Hint: this requires a pivot.</em>]</li>
+<li>Change the abbreviations in the new frog species variable to actual species names. [<em>Hint: examine the meta sheet in the Excel workbook.</em>]</li>
+<li>Create a new “occurrence” variable that is “yes” if the species of frog was seen at that site on that date and “no” otherwise. [<em>Hint: think how you can do this from your frog count variable.</em>]</li>
+<li>Make sure that the site/location name variable is left-most in the data frame.</li>
+</ul>
+<p>Use the two modified data frames from above to add lake information (i.e., development, lake area, alkalinity, and ph) to the frog results. [<em>Hint: This requires a join</em>] Make sure the lake information immediately follows the site/location name.</p>
+<p>In the end, our data frame should be similar to this one (same number of rows and columns, but perhaps different variable names).</p>
+</div>
+<div id="a-tibble-2904-x-14" class="section level1">
+<h1>A tibble: 2,904 x 14</h1>
+<p>site type Area Alk pH DATE Run air_temp <chr> <chr> <dbl> <dbl> <dbl> <dttm> <dbl> <dbl> 1 Muskellu~ Devel~ 2.4 20 6.8 1997-05-10 00:00:00 1 48 2 Muskellu~ Devel~ 2.4 20 6.8 1997-05-10 00:00:00 1 48 3 Muskellu~ Devel~ 2.4 20 6.8 1997-05-10 00:00:00 1 48 4 Muskellu~ Devel~ 2.4 20 6.8 1997-05-10 00:00:00 1 48 5 Muskellu~ Devel~ 2.4 20 6.8 1997-05-10 00:00:00 1 48 6 Muskellu~ Devel~ 2.4 20 6.8 1997-05-10 00:00:00 1 48 7 Muskellu~ Devel~ 2.4 20 6.8 1997-05-10 00:00:00 1 48 8 Muskellu~ Devel~ 2.4 20 6.8 1997-05-10 00:00:00 1 48 9 Muskellu~ Devel~ 2.4 20 6.8 1997-05-10 00:00:00 1 48 10 Muskellu~ Devel~ 2.4 20 6.8 1997-05-10 00:00:00 1 48 # … with 2,894 more rows, and 6 more variables: water_temp <dbl>, # Surveyor <chr>, pairVP <dbl>, species <chr>, count <dbl>, # occurrence <chr></p>
 </div>
 
 

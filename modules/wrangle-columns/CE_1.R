@@ -1,5 +1,10 @@
 library(tidyverse)
 
+library(FSA)
+tmp <- psdVal("Walleye")
+tibble(status=names(tmp),
+       `lengths (mm)`=paste0(tmp,c(rep("-",5),"+"),c(tmp[-1]-1,""))) %>%
+
 wae <- read_csv("https://raw.githubusercontent.com/droglenc/FSAdata/master/data-raw/WalleyeErie2.csv") %>%
   select(-setID,-grid,-mat) %>%
   mutate(loc=plyr::mapvalues(loc,from=c(1,2,3),
@@ -20,5 +25,36 @@ wae <- read_csv("https://raw.githubusercontent.com/droglenc/FSAdata/master/data-
   relocate(age,.before=sex)
 wae
 
+fn <- file.path("..","..","resources","data","FrogsSOEI.xlsx")
+nas <- c("*","","NA")
+fli <- readxl::read_excel(fn,sheet="LakeInfo",skip=3,na=nas) %>%
+  rename(site=`SITE NAME`,type=`D/U`) %>%
+  mutate(type=plyr::mapvalues(type,from=c("D","U"),
+                              to=c("Developed","Undeveloped")))
 
-# Script created at 2021-07-27 18:25:48
+ffr <- readxl::read_excel(fn,sheet="FrogResults",skip=3,na=nas) %>%
+  rename(site=`SITE NAME`,air_temp=`Air Temp`,water_temp=`H2O TEMP.(F)`) %>%
+  select(-COMMENTS) %>%
+  mutate(Surveyor=plyr::mapvalues(Surveyor,from=c("P","V"),
+                                  to=c("Professional","Volunteer")))
+
+ffr2 <- pivot_longer(ffr,cols=AT:CF,names_to="species",values_to="count") %>%
+  mutate(species=plyr::mapvalues(species,
+                                 from=c("AT","SP","WF","LP","PF","MF",
+                                        "GTF","CTF","GF","BF","CF"),
+                                 to=c("American Toad","Spring Peeper",
+                                      "Wood Frog","Northern Leopard Frog",
+                                      "Pickerel Frog","Mink Frog",
+                                      "Eastern Gray Treefrog","Cope's Gray Treefrog",
+                                      "Green Frog","American Bullfrog",
+                                      "Western Chorus Frog")),
+         occurrence=ifelse(count>0,"yes","no")) %>%
+  relocate(site)
+
+ffr3 <- left_join(ffr2,fli,by="site") %>%
+  relocate(type:pH,.after=site)
+
+ffr3
+
+
+# Script created at 2021-07-28 16:28:40
