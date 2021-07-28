@@ -27,7 +27,7 @@ library(kableExtra)
 ----
 
 ## Lake Erie Walleye
-Lake Erie is world-renowned for its Walleye (*Sander vitreus*) population and fishing. The Ohio Department of Natural Resources samples Walleye with gillnets from three regions of Lake Erie every fall. Their results from 2003-2014 are stored in [this file](https://raw.githubusercontent.com/droglenc/FSAdata/master/data-raw/WalleyeErie2.csv) from the fishR webpage. [Metadata for the data file is here(http://derekogle.com/fishR/data/data-html/WalleyeErie2.html). The following tasks should be completed to prepare these data for further analysis.
+Lake Erie is world-renowned for its Walleye (*Sander vitreus*) population and fishing. The Ohio Department of Natural Resources samples Walleye with gillnets from three regions of Lake Erie every fall. Their results from 2003-2014 are stored in [this file](https://raw.githubusercontent.com/droglenc/FSAdata/master/data-raw/WalleyeErie2.csv) from the fishR webpage. [Metadata for the data file is here](http://derekogle.com/fishR/data/data-html/WalleyeErie2.html). The following tasks should be completed to prepare these data for further analysis.
 
 * The regional sampling location should be converted from their numerical codes (1, 2, 3) to their actual regional names.
 * A standard weight variable should be computed from the observed lengths with this formula -- 0.00000352*LENGTH<sup>3.18</sup>.

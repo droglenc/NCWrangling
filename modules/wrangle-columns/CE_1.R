@@ -52,4 +52,4 @@ ffr3 <- left_join(ffr2,fli,by="site") %>%
 ffr3
 
 
-# Script created at 2021-07-28 16:41:48
+# Script created at 2021-07-28 17:04:17
