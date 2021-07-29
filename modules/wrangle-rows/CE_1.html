@@ -1,0 +1,190 @@
+---
+layout: page
+title: Exercise - Wrangle Rows
+author: Derek H. Ogle
+css: "/css/modules.css"
+---
+
+
+<hr />
+<div id="filtering-i" class="section level2">
+<h2>Filtering I</h2>
+<p>For data frame B shown below (you will need to enter this data frame in R), demonstrate each type of conditioning expression from Table 7.1. For each expression show your code, show the results, and write a sentence about what you were trying to accomplish. Make choices that do not result in an empty data frame.</p>
+<table class=" lightable-classic table table-hover table-condensed" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; margin-right: 0; margin-left: auto">
+<caption>
+Data frame B
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;font-weight: bold;">
+student
+</th>
+<th style="text-align:center;font-weight: bold;">
+name
+</th>
+<th style="text-align:center;font-weight: bold;">
+year
+</th>
+<th style="text-align:center;font-weight: bold;">
+pretest
+</th>
+<th style="text-align:center;font-weight: bold;">
+posttest
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+Jamila
+</td>
+<td style="text-align:center;">
+JR
+</td>
+<td style="text-align:center;">
+84
+</td>
+<td style="text-align:center;">
+91
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+Frank
+</td>
+<td style="text-align:center;">
+SR
+</td>
+<td style="text-align:center;">
+76
+</td>
+<td style="text-align:center;">
+88
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+Rose
+</td>
+<td style="text-align:center;">
+SR
+</td>
+<td style="text-align:center;">
+65
+</td>
+<td style="text-align:center;">
+77
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+Courtney
+</td>
+<td style="text-align:center;">
+SO
+</td>
+<td style="text-align:center;">
+85
+</td>
+<td style="text-align:center;">
+86
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+Lavelle
+</td>
+<td style="text-align:center;">
+JR
+</td>
+<td style="text-align:center;">
+81
+</td>
+<td style="text-align:center;">
+91
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+</div>
+<div id="fish-tagging-data" class="section level2">
+<h2>Fish Tagging Data</h2>
+<p>In <a href="../Pivot/CE_1.html#fish-tagging-data">this excercise</a> you created a data frame that would allow three variables to be computed – amount of time between captures (i.e., between tagging and recapture), change in total length between captures, and change in weight between captures. Continue that exercise here by …</p>
+<ul>
+<li>adding the three variables mentioned above to the data frame,</li>
+<li>moving each “change” variable to be immediately after the tag variable, and</li>
+<li>sorting the data from from the fish that was “at large” the shortest to the longest amount of time.</li>
+</ul>
+<p>Use this new data frame to create the following data frames. For each data frame show your code and use some code to demonstrate that your filtering was likely successful.</p>
+<ol>
+<li><p>Construct a data frame of just Pumpkinseed fish.</p></li>
+<li><p>Construct a data frame of Pumpkinseed and Bluegill fish.</p></li>
+<li><p>Construct a data frame of Black Crappie that were initially more than 13 inches long.</p></li>
+<li><p>Construct a data frame of Largemouth Bass that were larger than 14 inches at recapture and were at-large for at least three years.</p></li>
+</ol>
+<p> </p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

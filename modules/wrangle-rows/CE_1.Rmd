@@ -26,5 +26,73 @@ library(kableExtra)
 
 ----
 
-## XXX
+## Filtering I
+For data frame B shown below (you will need to enter this data frame in R), demonstrate each type of conditioning expression from Table 7.1. For each expression show your code, show the results, and write a sentence about what you were trying to accomplish. Make choices that do not result in an empty data frame.
+
+```{r B, echo=FALSE}
+B <- data.frame(student=1:5,
+                name=c("Jamila","Frank","Rose","Courtney","Lavelle"),
+                year=c("JR","SR","SR","SO","JR"),
+                pretest=c(84,76,65,85,81),
+                posttest=c(91,88,77,86,91))
+```
+```{r results='markup'}
+knitr::kable(B,align="c",caption="Data frame B") %>%
+  kable_classic(full_width=FALSE,html_font="Cambria") %>%
+  kable_styling(bootstrap_options=c("hover","condensed"),position="right") %>%
+  row_spec(0,bold=TRUE)
+```
+
+&nbsp;
+
+## Fish Tagging Data
+In [this excercise](../Pivot/CE_1.html#fish-tagging-data) you created a data frame that would allow three variables to be computed -- amount of time between captures (i.e., between tagging and recapture), change in total length between captures, and change in weight between captures. Continue that exercise here by ...
+
+* adding the three variables mentioned above to the data frame,
+* moving each "change" variable to be immediately after the tag variable, and
+* sorting the data from from the fish that was "at large" the shortest to the longest amount of time.
+
+```{r}
+IL <- readxl::read_excel(file.path("..","..","resources","data","InchLakeTags.xlsx"),
+                         sheet="data") %>%
+  pivot_wider(names_from=recap_time,values_from=c(sDate,tl,w)) %>%
+  mutate(delta_t=sDate_1-sDate_0,
+         delta_tl=tl_1-tl_0,
+         delta_w=w_1-w_0) %>%
+  relocate(starts_with("delta"),.after=tag) %>%
+  arrange(delta_t)
+IL
+```
+
+Use this new data frame to create the following data frames. For each data frame show your code and use some code to demonstrate that your filtering was likely successful.
+
+1. Construct a data frame of just Pumpkinseed fish.
+
+```{r}
+ps <- IL %>% filter(species=="Pumpkinseed")
+ps
+```
+
+2. Construct a data frame of Pumpkinseed and Bluegill fish.
+
+```{r}
+psbg <- IL %>% filter(species %in% c("Bluegill","Pumpkinseed"))
+unique(psbg$species)
+```
+
+3. Construct a data frame of Black Crappie that were initially more than 13 inches long.
+
+```{r}
+bkc13 <- IL %>% filter(species=="Black Crappie",tl_0>13)
+bkc13
+```
+
+4. Construct a data frame of Largemouth Bass that were larger than 14 inches at recapture and were at-large for at least three years.
+
+```{r}
+lmb1 <- IL %>% filter(species=="Largemouth Bass",tl_1>14,delta_t>3*365)
+lmb1
+```
+
+&nbsp;
 
