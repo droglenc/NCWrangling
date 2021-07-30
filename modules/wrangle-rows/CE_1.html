@@ -10,7 +10,7 @@ css: "/css/modules.css"
 <div id="filtering-i" class="section level2">
 <h2>Filtering I</h2>
 <p>For data frame B shown below (you will need to enter this data frame in R), demonstrate each type of conditioning expression from Table 7.1. For each expression show your code, show the results, and write a sentence about what you were trying to accomplish. Make choices that do not result in an empty data frame.</p>
-<table class=" lightable-classic table table-hover table-condensed" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; margin-right: 0; margin-left: auto">
+<table class=" lightable-classic table table-hover table-condensed" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto;">
 <caption>
 Data frame B
 </caption>
@@ -139,6 +139,38 @@ JR
 <li><p>Construct a data frame of Largemouth Bass that were larger than 14 inches at recapture and were at-large for at least three years.</p></li>
 </ol>
 <p> </p>
+</div>
+<div id="quarterbacks-i" class="section level2">
+<h2>Quarterbacks I</h2>
+<p><a href="https://www.sports-reference.com/">sports-reference.com</a> has a wealth of information on major American sports. Here you will work with statistics for college quarterbacks from the 2020-21 season. Use the following steps to get an Excel file of the data from their webpage.</p>
+<ol>
+<li>Goto <a href="https://www.sports-reference.com/" class="uri">https://www.sports-reference.com/</a>;</li>
+<li>Select “CFB” in the list of sports in the gray box near the top of the page;</li>
+<li>Select “Years” in the list of items in the gray box near the top of the page;</li>
+<li>Select “2020” in the list of years on the left side of the table;</li>
+<li>Hover over “Stats” in the gray box near the middle of the page and select “Passing” from the items that will appear;</li>
+<li>Hover over the “Share &amp; Export” item just above the top-right side of the table of statistics and select “Get as Excel Workbook”;</li>
+<li>Save that workbook to your computer; and</li>
+<li>Open the workbook in Excel and “save as” an Excel Workbook (<em>this works around the file downloading in a non-standard Excel format</em>).</li>
+</ol>
+<p>Once you have the data on your computer load the data into R and perform the following cleaning tasks.</p>
+<ol>
+<li>Remove the last four columns that pertain to rushing statistics.</li>
+<li>Fix the three remaining variables that had numbers attached to their names.</li>
+<li>Change the “Y/A” variable to “Yds_per_Att” and the “AY/A” variable to “AdjYds_per_Att”.</li>
+</ol>
+<p>With the cleaned data set create data frames that match the following conditions. Show your code and do “something” that demonstrates that your data frame has the correct observations.</p>
+<ol>
+<li>Only those quarterbacks that played more than 10 games.</li>
+<li>Quarterbacks that played in one off the “Power 5” Conferences (ACC, Big 12, Big Ten, Pac-12, and SEC).</li>
+<li>Quarterbacks from “Power 5” conferences that attempted more than 400 passes.</li>
+<li>Quarterbacks from <strong>NON</strong> “Power 5” conferences that had a completion percentage between 45 and 60%.</li>
+</ol>
+<p> </p>
+</div>
+<div id="quarterbacks-ii" class="section level2">
+<h2>Quarterbacks II</h2>
+<p>Repeat the steps shown above to create a data frame of passing data for quarterbacks from the 2019 year. Then combine these data with your data frame of passing data for quarterbacks from the 2020 year to make one data frame with data from both years. Make sure to include a new variable that identifies what year the observation is from. Show your code and the structure of your final data frame.</p>
 </div>
 
 
