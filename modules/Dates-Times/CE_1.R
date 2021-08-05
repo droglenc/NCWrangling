@@ -17,7 +17,5 @@ wcd %<>%
          precip=as.numeric(precip))
 wcd
 
-getwd()
 
-
-# Script created at 2021-08-05 09:25:11
+# Script created at 2021-08-05 09:29:07

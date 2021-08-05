@@ -29,10 +29,9 @@ library(lubridate)
 ## Stream Discharge
 Follow the same descriptions as in the reading for obtaining stream discharge data for the Bois Brule and Bad Rivers in northern Wisconsin (see map below) for all of 2020.
 
-```{r echo=FALSE, out.width='20%', fig.show='hold'}
+```{r echo=FALSE, out.width='20%', fig.show='hold', results='markup'}
 knitr::include_graphics("WI_discharge_map.JPG")
 ```
-
 
 Combine these data into one data frame and compute summary statistics by month for each river. Show your full code and results and comment on any observations that you can make from your summaries.
 
