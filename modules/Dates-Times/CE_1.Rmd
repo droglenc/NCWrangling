@@ -27,26 +27,57 @@ library(lubridate)
 ----
 
 ## Stream Discharge
-Follow the same descriptions as in the reading for obtaining stream discharge data for the Bois Brule and Bad Rivers in northern Wisconsin (see map below) for all of 2020.
+Follow the same descriptions as in the reading for obtaining (just) stream **discharge** data for the Bois Brule and Bad Rivers in northern Wisconsin (see map below) for all of 2020.
 
-```{r echo=FALSE, out.width='20%', fig.show='hold', results='markup'}
+```{r echo=FALSE, out.width='60%', fig.show='hold', results='markup'}
 knitr::include_graphics("WI_discharge_map.JPG")
 ```
 
-Combine these data into one data frame and compute summary statistics by month for each river. Show your full code and results and comment on any observations that you can make from your summaries.
+Combine these data into one data frame and compute mean discharge by month for each river. Rearrange the resultant data frame so that the monthly results for both rivers are in side-by-side columns. Show your full code and results and comment on any observations that you can make from your summaries.
 
 ```{r}
-wcd <- read_tsv("https://nwis.waterdata.usgs.gov/usa/nwis/uv/?cb_00045=on&cb_00060=on&format=rdb&site_no=040263205&period=&begin_date=2021-01-01&end_date=2021-08-03",
-                comment="#")
-wcd
-
-wcd %<>%
+bbr <- read_tsv("https://nwis.waterdata.usgs.gov/usa/nwis/uv/?cb_00060=on&format=rdb&site_no=04025500&period=&begin_date=2020-01-01&end_date=2020-12-31",
+                comment="#") %>%
   slice(-1) %>%
-  select(-ends_with("cd"),-site_no) %>%
-  rename(discharge=ends_with("00060"),
-         precip=ends_with("00045")) %>%
+  select(-ends_with("cd")) %>%
+  rename(discharge=ends_with("00060")) %>%
   mutate(datetime=ymd_hm(datetime),
-         discharge=as.numeric(discharge),
-         precip=as.numeric(precip))
-wcd
+         discharge=as.numeric(discharge))
+
+bad <- read_tsv("https://nwis.waterdata.usgs.gov/usa/nwis/uv/?cb_00060=on&format=rdb&site_no=04027000&period=&begin_date=2020-01-01&end_date=2020-12-31",
+                comment="#") %>%
+  slice(-1) %>%
+  select(-ends_with("cd")) %>%
+  rename(discharge=ends_with("00060")) %>%
+  mutate(datetime=ymd_hm(datetime),
+         discharge=as.numeric(discharge))
+
+dschrg <- bind_rows(bad,bbr) %>%
+  mutate(river=ifelse(site_no=="04027000","Bad","Bois Brule"),
+         mon=month(datetime,label=TRUE)) %>%
+  select(-site_no) %>%
+  relocate(river)
 ```
+```{r}
+dschrg %>%
+  group_by(river,mon) %>%
+  summarize(mean=mean(discharge)) %>%
+  ungroup() %>%
+  pivot_wider(names_from=river,values_from=mean)
+```
+
+
+```{r fig.show="hide"}
+ggplot(data=dschrg,mapping=aes(x=datetime,y=discharge,color=river)) +
+  geom_line() +
+  scale_y_continuous(name="Discharge (cf/s)",trans="log10",
+                     expand=expansion(mult=c(0,0.05))) +
+  scale_x_datetime(breaks="months",date_labels="%e-%b") +
+  theme_bw() +
+  theme(axis.title.x=element_blank()) +
+  labs(title="Bad and  Bois Brule Rivers, Northern WI",
+       subtitle="2020 Stream Discharge",
+       caption="source: USGS")
+
+```
+
