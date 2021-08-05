@@ -28,7 +28,7 @@ XXX
 
 ## Preparation for Class
 
-* [Reading](http://derekogle.com/BookWrangling/dates-times.html){:target="_blank"}.
+* [Reading](http://derekogle.com/BookWrangling/dates-and-times.html){:target="_blank"}.
 
 ----
 
