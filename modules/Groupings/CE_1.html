@@ -1,0 +1,122 @@
+---
+layout: page
+title: Exercise - Groupings
+author: Derek H. Ogle
+css: "/css/modules.css"
+---
+
+
+<hr />
+<div id="snap-history-1970-2019" class="section level2">
+<h2>SNAP History 1970-2019</h2>
+<p>The <a href="https://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap">Supplementary Nutrition Assistance Program (SNAP)</a>, formerly known as the Food Stamp Program, provides food assistance to low-income families in the form of a debit card. Data about the program from 1969 to 2019 are in <a href="https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/SNAP_history_1969_2019.csv">SNAP_history_1969_2019.csv</a>. A brief description of each variable in the data set <a href="https://www.kaggle.com/jpmiller/publicassistance">is here</a> (<em>you may need to scroll down some</em>).</p>
+<p>Load these data into R and perform the following wranglings:</p>
+<ul>
+<li>Create simpler variable names.</li>
+<li>Remove the data for 1969 (so the first year will be 1970).</li>
+<li>Create a new variable that contains the decade for each observation (e.g., the 1970s decade will contain all years from 1970 to 1979).</li>
+<li>Create a new variable that is the difference between total benefits paid and total costs of the program (construct the difference such that negative numbers represent more costs than benefits paid).</li>
+</ul>
+<p>Answer the following questions with the newly wrangled data frame.</p>
+<ol>
+<li>Summarize the annual average number of participants by decade (<em>summary should include a measure of center and dispersion</em>). Comment on any patterns over time.</li>
+<li>Summarize the annual difference in benefits paid and total costs by decade (<em>summary should include a measure of center and dispersion</em>). Comment on any patterns over time.</li>
+</ol>
+<p> </p>
+</div>
+<div id="quarterbacks" class="section level2">
+<h2>Quarterbacks</h2>
+<p><a href="%22../wrangle-rows/CE_1.html#quarterbacks-ii%22">In this exercise</a> you created a data frame of statistics for all NCAA quarterbacks in 2019 and 2020. Get those data for this exercise but reduce it to just those quarterbacks in “Power 5” conferences (as defined <a href="%22../wrangle-rows/CE_1.html#quarterbacks-i%22">in this exercise</a>). Then use those data to perform the following tasks.</p>
+<ol>
+<li>Construct a data frame that has the sample size and mean passer rating for each conference for each year.</li>
+<li>Construct a data frame that has the sample and mean passer rating for each conference (across both years).</li>
+<li>Construct a data frame that has the sample size and mean passer rating for each year (across all five conferences).</li>
+<li>Construct a data frame that has all of the results from the previous three data frames sorted by year within each conference. [<em>Hints: (1) Modify the last two data frames so that all three data frames have the same number of variables with the same names. (2) Insert <code>NA</code>s for elements that don’t exist in the modified final data frame. (3) Your final data frame should look like that below.</em>]</li>
+</ol>
+<pre><code>## # A tibble: 17 x 5
+## # Groups:   Conf [6]
+##    Year  Conf        n valid_n  mean
+##    &lt;chr&gt; &lt;chr&gt;   &lt;int&gt;   &lt;int&gt; &lt;dbl&gt;
+##  1 2019  ACC        10      10  138.
+##  2 2020  ACC        13      13  139.
+##  3 &lt;NA&gt;  ACC        23      23  139.
+##  4 2019  Big 12     10      10  144.
+##  5 2020  Big 12     10      10  133.
+##  6 &lt;NA&gt;  Big 12     20      20  138.
+##  7 2019  Big Ten    11      11  143.
+##  8 2020  Big Ten    12      12  131.
+##  9 &lt;NA&gt;  Big Ten    23      23  137.
+## 10 2019  Pac-12     10      10  150.
+## 11 2020  Pac-12     10      10  136.
+## 12 &lt;NA&gt;  Pac-12     20      20  143.
+## 13 2019  SEC         9       9  141.
+## 14 2020  SEC        12      12  145.
+## 15 &lt;NA&gt;  SEC        21      21  143.
+## 16 2019  &lt;NA&gt;       50      50  143.
+## 17 2020  &lt;NA&gt;       57      57  137.</code></pre>
+<p> </p>
+</div>
+<div id="sums-of-squares" class="section level2">
+<h2>Sums-of-Squares</h2>
+<p>The standard deviation of a variable <span class="math inline">\(x\)</span> is calculated with</p>
+<p><span class="math display">\[
+\sqrt{\frac{\sum_{i=1}^{n} (x_{i}-\bar{x})^{2}}{n-1}}
+\]</span> where <span class="math inline">\(x_{i}\)</span> is the <span class="math inline">\(i\)</span>th observation of the variable <span class="math inline">\(x\)</span>, <span class="math inline">\(\bar{x}\)</span> is the mean of <span class="math inline">\(x\)</span>, and <span class="math inline">\(n\)</span> is the number of observations of <span class="math inline">\(x\)</span>. A list of six steps for this calculation and a table that helps with computing the standard deviation <a href="http://derekogle.com/Book107/UnivSum.html#standard-deviation">are described here</a>.</p>
+<p>Use the following data frame called <code>df</code> for the questions below.</p>
+<pre class="r"><code>df &lt;- tibble(group=rep(c(&quot;A&quot;,&quot;B&quot;),c(4,5)),
+             value=c(10,22,14,18,22,25,28,21,24))</code></pre>
+<ol>
+<li>Construct a data frame that is like <a href="http://derekogle.com/Book107/UnivSum.html#tab:SDCalc">Table 4.3 (in the link above)</a> but for the data in <code>df</code>. [<em>Hint: The table will not have the “Sum” row.</em>]</li>
+<li>Summarize the data frame created above to compute the standard deviation for these data. [<em>Hint: this will use <code>summarize()</code> and <code>mutate()</code> but not <code>group_by()</code>. The standard deviation you calculate should equal 5.61.</em>]</li>
+<li>Construct a data frame that is like <a href="http://derekogle.com/Book107/UnivSum.html#tab:SDCalc">Table 4.3 (in the link above)</a> but will ultimately allow you to compute the standard deviation for both groups. [<em>Hint: this will require use of <code>group_by()</code>.</em>]</li>
+<li>Summarize the last data frame created above to compute the standard deviation for both groups in these data. [<em>Hint: the standard deviations you calculate should equal 5.16 and 2.74.</em>]</li>
+</ol>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -21,10 +21,162 @@ FSA::purl2(file.path(here::here(),dnm,paste0(fnm,".Rmd")),
 ```{r echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo=FALSE,results="hide",message=FALSE)
 library(tidyverse)
-library(kableExtra)
+library(magrittr)
 ```
 
 ----
 
-## XXX
+## SNAP History 1970-2019
+The [Supplementary Nutrition Assistance Program (SNAP)](https://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap), formerly known as the Food Stamp  Program, provides food assistance to low-income families in the form of a debit card. Data about the program from 1969 to 2019 are in [SNAP_history_1969_2019.csv](https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/SNAP_history_1969_2019.csv). A brief description of each variable in the data set [is here](https://www.kaggle.com/jpmiller/publicassistance) (*you may need to scroll down some*).
 
+Load these data into R and perform the following wranglings:
+
+* Create simpler variable names.
+* Remove the data for 1969 (so the first year will be 1970).
+* Create a new variable that contains the decade for each observation (e.g., the 1970s decade will contain all years from 1970 to 1979).
+* Create a new variable that is the difference between total benefits paid and total costs of the program (construct the difference such that negative numbers represent more costs than benefits paid).
+
+Answer the following questions with the newly wrangled data frame.
+
+1. Summarize the annual average number of participants by decade (*summary should include a measure of center and dispersion*). Comment on any patterns over time.
+1. Summarize the annual difference in benefits paid and total costs by decade (*summary should include a measure of center and dispersion*). Comment on any patterns over time.
+
+```{r}
+SNAP <- read_csv("https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/SNAP_history_1969_2019.csv") %>%
+  rename(year=`Fiscal Year`,participation=`Average Participation`,
+         bens_pers=`Average Benefit Per Person`,ttl_bens=`Total Benefits(M)`,
+         other_costs=`Other Costs`,ttl_costs=`Total Costs(M)`) %>%
+  slice(-1) %>%
+  mutate(decade=paste0(floor(year/10)*10,"s"),
+         diff=ttl_bens-ttl_costs)
+SNAP
+```
+```{r}
+sum_part <- SNAP %>%
+  group_by(decade) %>%
+  summarize(n=n(),
+            mean=mean(participation),
+            sd=sd(participation),
+            min=min(participation),
+            max=max(participation))
+sum_part
+```
+```{r}
+sum_bcdiff <- SNAP %>%
+  group_by(decade) %>%
+  summarize(n=n(),
+            mean=mean(diff),
+            sd=sd(diff),
+            min=min(diff),
+            max=max(diff))
+sum_bcdiff  
+```
+
+&nbsp;
+
+## Quarterbacks
+[In this exercise]("../wrangle-rows/CE_1.html#quarterbacks-ii") you created a data frame of statistics for all NCAA quarterbacks in 2019 and 2020. Get those data for this exercise but reduce it to just those quarterbacks in "Power 5" conferences (as defined [in this exercise]("../wrangle-rows/CE_1.html#quarterbacks-i")). Then use those data to perform the following tasks.
+
+1. Construct a data frame that has the sample size and mean passer rating for each conference for each year.
+1. Construct a data frame that has the sample and mean passer rating for each conference (across both years).
+1. Construct a data frame that has the sample size and mean passer rating for each year (across all five conferences).
+1. Construct a data frame that has all of the results from the previous three data frames sorted by year within each conference. [*Hints: (1) Modify the last two data frames so that all three data frames have the same number of variables with the same names. (2) Insert `NA`s for elements that don't exist in the modified final data frame. (3) Your final data frame should look like that below.*]
+
+```{r}
+qbs20 <- readxl::read_excel(file.path("..","..","resources","data","QBS_2020.xlsx"),
+                          skip=1) %>%
+  select(-(15:18)) %>%
+  rename(Att=Att...7,Yds=Yds...9,TD=TD...12,
+         Yds_per_att=`Y/A`,AdjYds_per_Att=`AY/A`)
+
+qbs19 <- readxl::read_excel(file.path("..","..","resources","data","QBS_2019.xlsx"),
+                          skip=1) %>%
+  select(-(15:18)) %>%
+  rename(Att=Att...7,Yds=Yds...9,TD=TD...12,
+         Yds_per_att=`Y/A`,AdjYds_per_Att=`AY/A`)
+
+qbs <- bind_rows("2019"=qbs19,"2020"=qbs20,.id="Year") %>%
+  filter(Conf %in% c("ACC","Big 12","Big Ten","Pac-12","SEC"))
+str(qbs)
+
+sum_year_by_conf <- qbs %>%
+  group_by(Year,Conf) %>%
+  summarize(n=n(),
+            valid_n=sum(!is.na(Rate)),
+            mean=mean(Rate,na.rm=TRUE))
+sum_year_by_conf
+
+sum_by_conf <- qbs %>%
+  group_by(Conf) %>%
+  summarize(n=n(),
+            valid_n=sum(!is.na(Rate)),
+            mean=mean(Rate,na.rm=TRUE))
+sum_by_conf
+
+sum_by_year <- qbs %>%
+  group_by(Year) %>%
+  summarize(n=n(),
+            valid_n=sum(!is.na(Rate)),
+            mean=mean(Rate,na.rm=TRUE))
+sum_by_year
+
+sum_by_conf %<>% mutate(Year=NA)
+sum_by_year %<>% mutate(Conf=NA)
+
+sum_qbs <- bind_rows(sum_conf_by_year,sum_by_conf,sum_by_year) %>%
+  arrange(Conf,Year) %>%
+  relocate(Year)
+```
+```{r results="hold"}
+sum_qbs
+```
+
+&nbsp;
+
+## Sums-of-Squares
+The standard deviation of a variable $x$ is calculated with
+
+$$
+\sqrt{\frac{\sum_{i=1}^{n} (x_{i}-\bar{x})^{2}}{n-1}}
+$$
+where $x_{i}$ is the $i$th observation of the variable $x$, $\bar{x}$ is the mean of $x$, and $n$ is the number of observations of $x$. A list of six steps for this calculation and a table that helps with computing the standard deviation [are described here](http://derekogle.com/Book107/UnivSum.html#standard-deviation).
+
+Use the following data frame called `df` for the questions below.
+
+```{r echo=TRUE}
+df <- tibble(group=rep(c("A","B"),c(4,5)),
+             value=c(10,22,14,18,22,25,28,21,24))
+```
+```{r}
+sum1 <- df %>%
+  mutate(diff=value-mean(value),
+         diffsq=diff^2)
+sum1
+
+sd1 <- sum1 %>%
+  summarize(n=n(),
+            sumdiffsq=sum(diffsq)) %>%
+  mutate(var=sumdiffsq/(n-1),
+         sd=sqrt(var))
+sd1
+```
+
+```{r}
+sum2 <- df %>%
+  group_by(group) %>%
+  mutate(diff=value-mean(value),
+         diffsq=diff^2)
+sum2
+
+sd2 <- sum2 %>%
+  summarize(n=n(),
+            sumdiffsq=sum(diffsq)) %>%
+  mutate(var=sumdiffsq/(n-1),
+         sd=sqrt(var))
+sd2
+```
+
+1. Construct a data frame that is like [Table 4.3 (in the link above)](http://derekogle.com/Book107/UnivSum.html#tab:SDCalc) but for the data in `df`. [*Hint: The table will not have the "Sum" row.*]
+1. Summarize the data frame created above to compute the standard deviation for these data. [*Hint: this will use `summarize()` and `mutate()` but not `group_by()`. The standard deviation you calculate should equal `r round(sd1$sd,2)`.*]
+1. Construct a data frame that is like [Table 4.3 (in the link above)](http://derekogle.com/Book107/UnivSum.html#tab:SDCalc) but will ultimately allow you to compute the standard deviation for both groups. [*Hint: this will require use of `group_by()`.*]
+1. Summarize the last data frame created above to compute the standard deviation for both groups in these data. [*Hint: the standard deviations you calculate should equal `r round(sd2$sd[1],2)` and `r round(sd2$sd[2],2)`.*]
