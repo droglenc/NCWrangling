@@ -14,8 +14,8 @@ title: Learning Modules
 1. [Wrangle Rows](wrangle-rows/)
 1. [Groupings](Groupings/)
 1. [Dates and Times](Dates-Times/)
-1. [Strings](Strings/)
 1. [Factors](Factors/)
+1. [Strings](Strings/)
 1. Case Study I
 1. Case Study II
 1. Project Work
