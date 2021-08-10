@@ -75,7 +75,7 @@ sum_bcdiff
 &nbsp;
 
 ## Quarterbacks
-[In this exercise]("../wrangle-rows/CE_1.html#quarterbacks-ii") you created a data frame of statistics for all NCAA quarterbacks in 2019 and 2020. Get those data for this exercise but reduce it to just those quarterbacks in "Power 5" conferences (as defined [in this exercise]("../wrangle-rows/CE_1.html#quarterbacks-i")). Then use those data to perform the following tasks.
+[In this exercise](../wrangle-rows/CE_1.html#quarterbacks-ii) you created a data frame of statistics for all NCAA quarterbacks in 2019 and 2020. Get those data for this exercise but reduce it to just those quarterbacks in "Power 5" conferences (as defined [in this exercise](../wrangle-rows/CE_1.html#quarterbacks-i)). Then use those data to perform the following tasks.
 
 1. Construct a data frame that has the sample size and mean passer rating for each conference for each year.
 1. Construct a data frame that has the sample and mean passer rating for each conference (across both years).
