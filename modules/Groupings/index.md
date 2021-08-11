@@ -42,4 +42,4 @@ XXX
 
 ## Resources
 
-* [Data Transformation](https://r4ds.had.co.nz/data-transformation.html) chapter of [*R fr Data Science*](https://r4ds.had.co.nz/index.html).
+* [Data Transformation](https://r4ds.had.co.nz/data-transformation.html) chapter of [*R for Data Science*](https://r4ds.had.co.nz/index.html).

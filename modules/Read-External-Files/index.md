@@ -42,4 +42,4 @@ XXX
 
 ## Resources
 
-* [Data Import](https://r4ds.had.co.nz/data-import.html) chapter of [*R fr Data Science*](https://r4ds.had.co.nz/index.html).
+* [Data Import](https://r4ds.had.co.nz/data-import.html) chapter of [*R for Data Science*](https://r4ds.had.co.nz/index.html).

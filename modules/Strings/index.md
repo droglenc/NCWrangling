@@ -42,5 +42,5 @@ XXX
 
 ## Resources
 
-* [Strings](https://r4ds.had.co.nz/strings.html#strings) chapter of [*R fr Data Science*](https://r4ds.had.co.nz/index.html).
+* [Strings](https://r4ds.had.co.nz/strings.html#strings) chapter of [*R for Data Science*](https://r4ds.had.co.nz/index.html).
 * [stringr Cheat Sheet](https://rawgit.com/rstudio/cheatsheets/master/strings.pdf)
