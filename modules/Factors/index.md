@@ -43,4 +43,4 @@ XXX
 ## Resources
 
 * [Factors](https://r4ds.had.co.nz/factors.html) chapter of [*R for Data Science*](https://r4ds.had.co.nz/index.html).
-* [stringr Cheat Sheet](https://rawgit.com/rstudio/cheatsheets/master/factors.pdf)
+* [forcats Cheat Sheet](https://rawgit.com/rstudio/cheatsheets/master/factors.pdf)
