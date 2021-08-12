@@ -1,0 +1,90 @@
+---
+layout: page
+title: Exercise - Factors
+author: Derek H. Ogle
+css: "/css/modules.css"
+---
+
+
+<hr />
+<div id="lake-activities" class="section level2">
+<h2>Lake Activities</h2>
+<p>Iron River Pike Chain of Lakes Association conducted a survey of residents that lived on the chain of lakes. One question in the survey asked respondents to state the activity that was most important reason for them to own property on the chain of lakes. The answers to this question are in <a href="https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/LakeActivity.csv">LakeActivity.csv</a>. Use these data to perform the following tasks.</p>
+<ol>
+<li>Compute the frequency and percentage of responses for each activity (with the activities in alphabetical order).</li>
+<li>Compute the frequency and percentage of responses for each activity with the activities in descending order of frequency.</li>
+<li>Compute the frequency and percentage of responses for each activity with the activities in descending order of frequency and activities with very minor frequencies of responses lumped into a single “Other” category. [<em>Make sure the “Other” category is listed last (and in the following questions).</em>]</li>
+<li>Compute the frequency and percentage of responses for each activity with the activities in descending order of frequency and activities with fewer than 5% of responses lumped into a single “Other” category. [<em>Use <code>fct_lump_prop()</code> which was not in the reading. Look at <a href="https://forcats.tidyverse.org/reference/fct_lump.html">the documentation for <code>fct_lump_prop()</code></a> for help with this.</em>]</li>
+<li>Compute the frequency and percentage of responses for each activity with the activities in descending order of frequency and activities with fewer than 10 responses lumped into a single “Other” category. [<em>Use <code>fct_lump_min()</code> which was not in the reading. Look at <a href="https://forcats.tidyverse.org/reference/fct_lump.html">the documentation for <code>fct_lump_min()</code></a> for help with this.</em>]</li>
+<li>Compute the frequency and percentage of responses for each activity but with the specific activities rearranged into two categories – “silent” and “Non-silent”. [*Use your own judgment about what “silent” means.]</li>
+</ol>
+<p> </p>
+</div>
+<div id="quarterbacks" class="section level2">
+<h2>Quarterbacks</h2>
+<p><a href="../wrangle-rows/CE_1.html#quarterbacks-i">In this exercise</a> you constructed a data frame of statistics for all NCAA quarterbacks in 2020. Return to those data for this exercise.</p>
+<ol>
+<li>Create a new variable in the data frame that treats conference as a factor but consolidates all non “Power 5” conferences (as defined <a href="../wrangle-rows/CE_1.html#quarterbacks-i">in this exercise</a>) into one category called “Other”. Make sure that the “Other” category is the last level of this new variable.</li>
+<li>Compute the mean (and standard deviation) passer rating across all quarterbacks in the conferences defined by the variable you created in the first question.</li>
+<li>Create another new variable (from the previously new variable) that will order the conferences in descending order of mean passer rating. Again, make sure that the “Other” category is the last level of this new variable.</li>
+<li>Compute the mean (and standard deviation) passer rating across all quarterbacks in the conferences defined by the variable you created in the previous question.</li>
+<li>Repeat the previous question but use a new variable that uses “Southeast Conference” instead of “SEC” and “Atlantic Coast Conference” instead of “ACC”.</li>
+</ol>
+<p> </p>
+</div>
+<div id="stream-discharge" class="section level2">
+<h2>Stream Discharge</h2>
+<p><a href="../Dates-Times/CE_1.html#stream-discharge">In this exercise</a> you obtained stream discharge data for the Bois Brule and Bad rivers in northern Wisconsin in 2020. For this exercise use just the data from the Bad River.</p>
+<ol>
+<li>Compute the mean (and standard deviation) discharge by month (with months ordered from January to December).</li>
+<li>Compute the mean (and standard deviation) discharge by “season” (define “Winter” as January-March, “Spring” as April-June, “Summer” as July-September, and “Fall” as October-December). Make sure your results are in a reasonable order.</li>
+</ol>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
