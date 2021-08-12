@@ -1,0 +1,39 @@
+---
+layout: page
+title: Dates Current
+author: "Derek H. Ogle"
+css: "/css/syllabus.css"
+output:
+  html_document:
+    self_contained: false
+    lib_dir: zlibs
+---
+
+```{r echo=FALSE, eval=FALSE}
+# Renders an appropriate HTML file for the webpage
+source(file.path(here::here(),"rhelpers/rhelpers.R"))
+fnm <- "aaaDataListAndUse"
+dnm <- "resources/data"
+modHTML(file.path(here::here(),dnm,fnm))
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(dplyr)
+dn <- "resources/data"
+fn <- "aaaDataListAndUse"
+options(knitr.kable.NA = '.')
+## Read dates, make date with day and topic with link
+d <- readxl::read_excel(file.path(here::here(),dn,paste0(fn,".xlsx"))) %>%
+  dplyr::mutate(Dataset=ifelse(is.na(Link),Dataset,
+                               paste0('<a href=\"',Link,'\">',Dataset,'</a>'))) %>%
+  dplyr::select(-Link,-Structures)
+names(d)[1] <- ""
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+## Make the kable
+knitr::kable(d,format="html",escape=FALSE) %>%
+  kableExtra::row_spec(0,angle=-45) %>%
+  kableExtra::kable_classic(bootstrap_options=c("condensed","hover","responsive"),
+                            full_width=FALSE,position="center")
+```
