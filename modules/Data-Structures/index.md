@@ -43,3 +43,5 @@ XXX
 ## Resources
 
 * [Tidy Data](https://r4ds.had.co.nz/tidy-data.html) chapter of [*R for Data Science*](https://r4ds.had.co.nz/index.html).
+* [Do You Know How To Make Tidy Data? Here's How.](https://about.dataclassroom.com/blog/keep-your-data-tidy).
+
