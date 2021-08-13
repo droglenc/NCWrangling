@@ -42,4 +42,5 @@ XXX
 
 ## Resources
 
-* [Data Transformation](https://r4ds.had.co.nz/data-transformation.html) chapter of [*R for Data Science*](https://r4ds.had.co.nz/index.html).
+* [Grouped Summaries](https://r4ds.had.co.nz/transform.html#grouped-summaries-with-summarise) section of [*R for Data Science*](https://r4ds.had.co.nz/index.html).
+* [Grouped Mutates and Filters](https://r4ds.had.co.nz/transform.html#grouped-mutates-and-filters) section of [*R for Data Science*](https://r4ds.had.co.nz/index.html).

@@ -42,4 +42,7 @@ XXX
 
 ## Resources
 
-* XXX.
+* [Filtering Rows](https://r4ds.had.co.nz/transform.html#filter-rows-with-filter) section of [*R for Data Science*](https://r4ds.had.co.nz/index.html).
+* [Arranging Rows](https://r4ds.had.co.nz/transform.html#arrange-rows-with-arrange) section of [*R for Data Science*](https://r4ds.had.co.nz/index.html).
+* [Filtering Video by Jane Wall](https://youtu.be/c28qj2jtUeE)
+* [Arrange Row Video by Jane Wall](https://youtu.be/onCx05OBVy4)

@@ -43,3 +43,4 @@ XXX
 ## Resources
 
 * [Relational Data](https://r4ds.had.co.nz/relational-data.html) chapter of [*R for Data Science*](https://r4ds.had.co.nz/index.html).
+* Relational Data Videos by Jane Wall -- [#1](https://youtu.be/Fr00NkqYB9k), [#2](https://www.youtube.com/watch?v=IuAT6yz_8-I), [#3](https://www.youtube.com/watch?v=QOy1SJIZ-cA), [#4](https://www.youtube.com/watch?v=1yaW-l7i0wE)

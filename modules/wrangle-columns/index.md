@@ -42,4 +42,5 @@ XXX
 
 ## Resources
 
-* [Data Transformation](https://r4ds.had.co.nz/data-transformation.html) chapter of [*R for Data Science*](https://r4ds.had.co.nz/index.html).
+* [Selecting Columns](https://r4ds.had.co.nz/transform.html#select) section of [*R for Data Science*](https://r4ds.had.co.nz/index.html).
+* [Adding New Variables](https://r4ds.had.co.nz/transform.html#add-new-variables-with-mutate) section of [*R for Data Science*](https://r4ds.had.co.nz/index.html).
