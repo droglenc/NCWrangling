@@ -29,8 +29,8 @@ XXX
 ## Preparation for Class
 
 * Look around the [class webpage](https://derekogle.com/NCGraphing/) (*should bookmark/favorite this page*)
-* [Setup MSTeams](resources/Setup_MSTeams){:target="_blank"}
-* [Setup R & RStudio](resources/RStart){:target="_blank"}
+* [Setup MSTeams](Setup_MSTeams){:target="_blank"}
+* [Setup R & RStudio](RStart){:target="_blank"}
 
 ----
 
