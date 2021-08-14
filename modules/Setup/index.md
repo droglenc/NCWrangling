@@ -30,33 +30,18 @@ XXX
 
 * Look around the [class webpage](https://derekogle.com/NCGraphing/) (*should bookmark/favorite this page*)
 * [Setup MSTeams](Setup_MSTeams){:target="_blank"}
-* [Setup R & RStudio](RStart){:target="_blank"}
+* [Reading](http://derekogle.com/BookWrangling/preparation.html){:target="_blank"}.
+  * Install and setup your R and RStudio as described in the reading.
+  * Install the `tidyverse`, `magrittr`, and `lubridate` packages as described in the reading.
+  * Prepare an RStudio project (with a corresponding folder) as described in the reading.
+  * Download and modify the Notebook template as described in the reading.
 
 ----
 
-## Demonstration
-
-<ul>
-  <li>Lecture/Demonstration <button type="button" class="btn btn-secondary btn-sm btn-space"><a href="https://youtu.be/LRlck0tiMco" target="_blank">VIDEO</a></button></li>
-  <ul>
-    <li>Introduction</li>
-    <li><a href="../resources/Syllabus-Current" target="_blank">Syllabus & Expectations</a></li>
-    <li>R and RStudio</li>
-    <li>Setting Up a Working Directory for the Class</li>
-    <li>Homework Formatting</li>
-      <ul>
-        <li><a href="https://raw.githubusercontent.com/droglenc/NCGraphing/gh-pages/modules/Setup/TEMPLATE.Rmd" target="_blank">Rmarkdown Template</a> ... download and save to your computer</li>
-        <li><a href="https://raw.githubusercontent.com/droglenc/NCData/master/Avocados.csv" target="_blank">Avocados Data</a> ... download and save to your computer</li>
-        <li><a href="https://mycourses.northland.edu/ICS/Academics/MTH/MTH__250/2019_30-MTH__250-01/Coursework.jnz" target="_blank">Uploading to Exercises unit in Coursework page of mycourses.northland.edu</a></li>
-      </ul>
-    <li><a href="Intro1.html" target="_blank">Reminder to prepare for [next class period]</a></li>
-  </ul>
-</ul>
-
-
 ## Exercise
-* Download one of the files below to your computer, load it into RStudio, and show the `str()`ucture and `head()` of the data.frame object. Compile your document and upload it to the "Course Organization" folder in the "Exercises" unit of [the "Coursework" page on mycourses.northland.edu](https://mycourses.northland.edu/ICS/Academics/MTH/MTH__250/2019_30-MTH__250-01/Coursework.jnz){:target="_blank"}.
+* Download one of the files below to your computer, load it into RStudio, and show the `str()`ucture of the data.frame object. [*Hint: use `read.csv()` like you did in your other statistics courses at Northland.*] Use an ordered list to answer these three questions -- (1) What is the name of your data frame object in R, (2) how many rows are there in the data frame, and (3) what is the name of the first variable in the data frame.
   * [Loon1.csv](https://raw.githubusercontent.com/droglenc/NCData/master/Loon1.csv) ... biological data for Common Loons (*Gavia immer*) from around North America.
   * [WalleyeErie2.csv](https://raw.githubusercontent.com/droglenc/FSAdata/master/data-raw/WalleyeErie2.csv) ... biological data for Walleye (*Sander vitreus*) from Lake Erie.
   * [NCAAF19_QBS.csv](https://raw.githubusercontent.com/droglenc/NCData/master/NCAAF19_QBS.csv) ... statistics for college football quarterbacks from the 2019-20 season.
   * [StateOfWolf.csv](https://raw.githubusercontent.com/droglenc/NCData/master/StateOfWolf.csv) ... attitude data towards Gray Wolves (*Canis lupus*) in Michigan, Minnesota, and Wisconsin.
+* Create another section in your document where you download another one of the files above to your computer, load it into RStudio, and show the `str()`ucture of the data.frame object. Answer the same three questions as above.
