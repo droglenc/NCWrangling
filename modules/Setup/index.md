@@ -30,11 +30,11 @@ XXX
 
 * Look around the [class webpage](https://derekogle.com/NCGraphing/) (*should bookmark/favorite this page*)
 * [Setup MSTeams](Setup_MSTeams){:target="_blank"}
-* [Reading](http://derekogle.com/BookWrangling/preparation.html){:target="_blank"}.
-  * Install and setup your R and RStudio as described in the reading.
-  * Install the `tidyverse`, `magrittr`, and `lubridate` packages as described in the reading.
-  * Prepare an RStudio project (with a corresponding folder) as described in the reading.
-  * Download and modify the Notebook template as described in the reading.
+* Read the [Reading](http://derekogle.com/BookWrangling/preparation.html){:target="_blank"} and do the following as described there.
+  * Install and setup your R and RStudio.
+  * Install the `tidyverse`, `magrittr`, and `lubridate` packages.
+  * Prepare an RStudio project (with a corresponding folder).
+  * Download and modify the Notebook template.
 
 ----
 
@@ -44,4 +44,5 @@ XXX
   * [WalleyeErie2.csv](https://raw.githubusercontent.com/droglenc/FSAdata/master/data-raw/WalleyeErie2.csv) ... biological data for Walleye (*Sander vitreus*) from Lake Erie.
   * [NCAAF19_QBS.csv](https://raw.githubusercontent.com/droglenc/NCData/master/NCAAF19_QBS.csv) ... statistics for college football quarterbacks from the 2019-20 season.
   * [StateOfWolf.csv](https://raw.githubusercontent.com/droglenc/NCData/master/StateOfWolf.csv) ... attitude data towards Gray Wolves (*Canis lupus*) in Michigan, Minnesota, and Wisconsin.
-* Create another section in your document where you download another one of the files above to your computer, load it into RStudio, and show the `str()`ucture of the data.frame object. Answer the same three questions as above.
+* Create another section in your document and repeat the question above with a different data file.
+* Compile your document to an HTML file and turn it into me via e-mail.
