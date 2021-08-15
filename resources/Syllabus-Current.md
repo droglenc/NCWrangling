@@ -8,7 +8,7 @@ css: /css/syllabus.css
 <p style="margin-bottom:0.5cm;"></p>
 <figure>
   <img src="../img/horst_monsters_data_wrangling.png" alt="Data Dance" style="display: block; margin-left: auto; margin-right: auto; width: 60%;">
-  <figcaption><span style="font-size:50%;">From <a href="https://github.com/allisonhorst" target="_blank">Allison Horst</a></span></figcaption>
+  <figcaption><span style="font-size:75%;">From <a href="https://github.com/allisonhorst" target="_blank">Allison Horst</a></span></figcaption>
 </figure>
 
 <p style="margin-bottom:1cm;"></p>
@@ -28,11 +28,9 @@ css: /css/syllabus.css
 ----
 
 ## Catalog Description
-
 Student will use the “tidyverse” to "wrangle" (i.e., manipulate) data for ease of analysis and visualization. Foundational principles of data structures; reading external files; relational data; selecting, renaming and rearranging variables; filtering, sorting, and isolating observations; summarizing results by groups; and handing dates, times, strings, and factors will be emphasized so that students can work with a wide variety of data formats. Class examples will be drawn from a variety of fields including the environmental, natural resources, and social sciences; business; and sports. Prerequisite is [MTH107](http://derekogle.com/NCMTH107/){:target="_blank"} or instructor's consent after demonstrating a simple familiarity with the R software (instructor can provide preparatory resources).
 
 ## Learning Outcomes
-<img class="img-right" src="../img/outcomes.jpg" alt="Outcomes">
 In this course, you will have the opportunity to:
 
 1. Describe the characteristics of "tidy data."
@@ -62,9 +60,13 @@ This class will have lots of coding in R. Learning R can be difficult at first �
 
 > It’s easy when you start out programming to get really frustrated and think, “Oh it’s me, I’m really stupid,” or, “I’m not made out to program.” But, that is absolutely not the case. Everyone gets frustrated. I still get frustrated occasionally when writing R code. It’s just a natural part of programming. So, it happens to everyone and gets less and less over time. Don’t blame yourself. Just take a break, do something fun, and then come back and try again later.
 
-This cartoon illustrates what Hadley explains and how you may feel at some point this term.[^HorstCredit]
+This cartoon illustrates what Hadley explains and how you may feel at some point this term.
 
-<img src="../img/gator_error.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 80%;">
+<p style="margin-bottom:0.5cm;"></p>
+<figure>
+  <img src="../img/gator_error.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 80%;">
+  <figcaption><span style="font-size:75%;">From <a href="https://github.com/allisonhorst" target="_blank">Allison Horst</a></span></figcaption>
+</figure>
 
 If you find yourself in this situation follow the advice of Hadley above and Allison below.
 
@@ -90,7 +92,6 @@ I want to create an inclusive and accessible learning environment for those of y
 ----
 
 ## Grading
-<img class="img-right" src="../img/grading.jpg">
 An overall grade will be computed from your performance on daily exercises (75%) and a final project (25%), which are both described below. Your letter grade will be assigned from your overall percentage (rounded to a whole number) and the table below.
 
 <table class="tg">
@@ -103,7 +104,7 @@ An overall grade will be computed from your performance on daily exercises (75%)
 ### Exercises
 Most course modules will have exercises that will be due by XXX.
 
-All exercises should be formatted as described [here](). Each exercise set is worth 10 points and will be graded with a two-part rubric. The first part of the rubric is based on your *completion* of the exercise.
+All exercises should be formatted as described [here](http://derekogle.com/BookWrangling/preparation.html#using-the-notebook-template). Each exercise set is worth 10 points and will be graded with a two-part rubric. The first part of the rubric is based on your *completion* of the exercise.
 
 <div class="container-fluid">
   <table class="table table-bordered">
@@ -134,7 +135,6 @@ The second part of the rubric is based on your correctness in performing the wor
 &nbsp;
 
 ### Final Project
-
 To demonstrate your ability to wrangle data in R, I am asking you to identify data that is of interest to you and wrangle it. **YOU SHOULD SEE ME ABOUT THE SPECIFICS OF THIS PROJECT RELATIVE TO THE DATA THAT YOU ARE INTERSESTED IN.**
 
 
@@ -149,7 +149,6 @@ An incomplete grade will be given ONLY in extreme circumstances that are beyond 
 
 
 #### Academic Alerts
-<img class="img-right" src="../img/alert.jpg">
 As you adjust to college, you may benefit from working with a professional on your organization, motivation, and stress level. If I observe you struggling with the course early in the term then I may file an "Academic Alert" about you. If this happens, you will receive an e-mail from me that explains steps you can take to improve your performance in the course. Our Academic Success Coordinator, Gina Kirsten, will receive the alert and will likely also reach out to you to set up a time to further discuss ways to improve in the course. **Academic Alerts are not punitive**, they are simply an attempt to help you get back on track in this course as soon as possible.
 
 ----

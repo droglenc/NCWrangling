@@ -28,7 +28,7 @@ XXX
 
 ## Preparation for Class
 
-* Look around the [class webpage](https://derekogle.com/NCGraphing/) (*should bookmark/favorite this page*)
+* Look around the [class webpage](https://derekogle.com/NCWrangling/) (*should bookmark/favorite this page*)
 * [Setup MSTeams](Setup_MSTeams){:target="_blank"}
 * Read the [Reading](http://derekogle.com/BookWrangling/preparation.html){:target="_blank"} and do the following as described there.
   * Install and setup your R and RStudio.
@@ -46,3 +46,12 @@ XXX
   * [StateOfWolf.csv](https://raw.githubusercontent.com/droglenc/NCData/master/StateOfWolf.csv) ... attitude data towards Gray Wolves (*Canis lupus*) in Michigan, Minnesota, and Wisconsin.
 * Create another section in your document and repeat the question above with a different data file.
 * Compile your document to an HTML file and turn it into me via e-mail.
+
+----
+
+## Resources
+
+* [What is R?](https://www.youtube.com/watch?v=XcBLEVknqvY)
+* [What's Up With R?](https://www.youtube.com/watch?v=ZwYQPtU2Pa0) [*stop at 1:51*]
+* [What is RStudio (part 1)](https://www.youtube.com/watch?v=riONFzJdXcs) [*stop at 2:27*]
+* [What is RStudio (part 2)](https://www.youtube.com/watch?v=riONFzJdXcs) [*only from 3:26 to 4:13*]
