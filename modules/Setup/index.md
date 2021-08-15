@@ -34,7 +34,7 @@ XXX
   * Install and setup your R and RStudio.
   * Install the `tidyverse`, `magrittr`, and `lubridate` packages.
   * Prepare an RStudio project (with a corresponding folder).
-  * Download and modify the Notebook template.
+  * Download and modify the [Notebook template](https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/TEMPLATE.Rmd).
 
 ----
 
