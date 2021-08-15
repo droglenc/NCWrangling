@@ -3,8 +3,6 @@ layout: page
 title: Learning Modules
 ---
 
-* [Pre-Course Introduction to R](IntroR)
-
 1. [Course Organization](Setup/)
 1. [Data Structures in R](Data-Structures/)
 1. [Read External Files](Read-External-Files/)
