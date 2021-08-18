@@ -27,7 +27,7 @@ library(kableExtra)
 ----
 
 ## Filtering I
-For data frame B shown below (you will need to enter this data frame in R), demonstrate each type of conditioning expression from Table 7.1. For each expression show your code, show the results, and write a sentence about what you were trying to accomplish. Make choices that do not result in an empty data frame.
+For data frame B shown below (you will need to enter this data frame in R), demonstrate each type of conditioning expression from [Table 7.1](http://derekogle.com/BookWrangling/wrangle-rows.html#tab:filterComps). For each expression show your code, show the results, and write a sentence about what you were trying to accomplish. [*Make choices that do not result in an empty data frame.*]
 
 ```{r B, echo=FALSE}
 B <- data.frame(student=1:5,
@@ -112,27 +112,21 @@ lmb1
 ## Quarterbacks I
 [sports-reference.com](https://www.sports-reference.com/) has a wealth of information on major American sports. Here you will work with statistics for college quarterbacks from the 2020-21 season. Use the following steps to get an Excel file of the data from their webpage.
 
-1. Goto https://www.sports-reference.com/;
-1. Select “CFB” in the list of sports in the gray box near the top of the page;
-1. Select “Years” in the list of items in the gray box near the top of the page;
-1. Select “2020” in the list of years on the left side of the table;
-1. Hover over “Stats” in the gray box near the middle of the page and select “Passing” from the items that will appear;
-1. Hover over the “Share & Export” item just above the top-right side of the table of statistics and select “Get as Excel Workbook”;
-1. Save that workbook to your computer; and
-1. Open the workbook in Excel and "save as" an Excel Workbook (*this works around the file downloading in a non-standard Excel format*).
+a. Goto https://www.sports-reference.com/;
+a. Select “CFB” in the list of sports in the gray box near the top of the page;
+a. Select “Years” in the list of items in the gray box near the top of the page;
+a. Select “2020” in the list of years on the left side of the table;
+a. Hover over “Stats” in the gray box near the middle of the page and select “Passing” from the items that will appear;
+a. Hover over the “Share & Export” item just above the top-right side of the table of statistics and select “Get as Excel Workbook”;
+a. Save that workbook to your computer;
+a. Open the workbook in Excel; and
+a. "File ... Save as" an Excel Workbook (*this works around the file downloading in a non-standard Excel format*).
 
 Once you have the data on your computer load the data into R and perform the following cleaning tasks.
 
-9. Remove the last four columns that pertain to rushing statistics.
-1. Fix the three remaining variables that had numbers attached to their names.
-1. Change the "Y/A" variable to "Yds_per_Att" and the "AY/A" variable to "AdjYds_per_Att".
-
-With the cleaned data set create data frames that match the following conditions. Show your code and do "something" that demonstrates that your data frame has the correct observations.
-
-12. Only those quarterbacks that played more than 10 games.
-1. Quarterbacks that played in one off the "Power 5" Conferences (ACC, Big 12, Big Ten, Pac-12, and SEC).
-1. Quarterbacks from "Power 5" conferences that attempted more than 400 passes.
-1. Quarterbacks from **NON** "Power 5" conferences that had a completion percentage between 45 and 60%.
+j. Remove the last four columns that pertain to rushing statistics.
+a. Fix the three remaining variables that had numbers attached to their names.
+a. Change the "Y/A" variable to "Yds_per_Att" and the "AY/A" variable to "AdjYds_per_Att".
 
 ```{r}
 qbs20 <- readxl::read_excel(file.path("..","..","resources","data","QBS_2020.xlsx"),
@@ -141,16 +135,33 @@ qbs20 <- readxl::read_excel(file.path("..","..","resources","data","QBS_2020.xls
   rename(Att=Att...7,Yds=Yds...9,TD=TD...12,
          Yds_per_att=`Y/A`,AdjYds_per_Att=`AY/A`)
 ```
+
+With the cleaned data set create data frames that match the following conditions. Show your code and do "something" that demonstrates that your data frame has the correct observations.
+
+1. Only those quarterbacks that played more than 10 games.
+
 ```{r}
 tmp <- qbs20 %>% filter(G>10)
 summary(tmp$G)
+```
 
+2. Quarterbacks that played in one off the "Power 5" Conferences (ACC, Big 12, Big Ten, Pac-12, and SEC).
+
+```{r}
 pwr5 <- qbs20 %>% filter(Conf %in% c("ACC","Big 12","Big Ten","Pac-12","SEC"))
 unique(pwr5$Conf)
+```
 
+3. Quarterbacks from "Power 5" conferences that attempted more than 400 passes.
+
+```{r}
 tmp <- pwr5 %>% filter(Att>400)
 summary(tmp$Att)
+```
 
+4. Quarterbacks from **NON** "Power 5" conferences that had a completion percentage between 45 and 60%.
+
+```{r}
 tmp <- qbs20 %>% filter(!Conf %in% c("ACC","Big 12","Big Ten","Pac-12","SEC"),
                       Pct>45,Pct<60)
 unique(tmp$Conf)
@@ -168,9 +179,7 @@ qbs19 <- readxl::read_excel(file.path("..","..","resources","data","QBS_2019.xls
   select(-(15:18)) %>%
   rename(Att=Att...7,Yds=Yds...9,TD=TD...12,
          Yds_per_att=`Y/A`,AdjYds_per_Att=`AY/A`)
-```
-```{r}
+
 qbs <- bind_rows("2019"=qbs19,"2020"=qbs20,.id="Year")
 str(qbs)
 ```
-
