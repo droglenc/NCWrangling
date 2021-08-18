@@ -106,12 +106,12 @@ A student asked five male and five female students what their home state is. The
 ```{r results='markup'}
 tmp1 <- data.frame(male=c("TX","IA","WI","WI","MN"),female=c("IL","WI","WI","OH","CA"))
 tmp2 <- tidyr::pivot_longer(tmp1,cols=everything(),names_to="gender",values_to="state")
-knitr::kable(tmp1,align="c",caption="Data frame 1",table.attr="style='width:30%;'") %>%
-  kableExtra::kable_classic(full_width=FALSE,html_font="Cambria") %>%
+knitr::kable(tmp1,align="c",caption="Data frame 1",table.attr="style='width:20%;'") %>%
+  kableExtra::kable_classic(html_font="Cambria") %>%
   kableExtra::kable_styling(bootstrap_options=c("hover","condensed"),position="float_left") %>%
   kableExtra::row_spec(0,bold=TRUE)
-knitr::kable(tmp2,align="c",caption="Data frame 2",table.attr="style='width:30%;'") %>%
-  kableExtra::kable_classic(full_width=FALSE,html_font="Cambria") %>%
+knitr::kable(tmp2,align="c",caption="Data frame 2",table.attr="style='width:20%;'") %>%
+  kableExtra::kable_classic(html_font="Cambria") %>%
   kableExtra::kable_styling(bootstrap_options=c("hover","condensed"),position="right") %>%
   kableExtra::row_spec(0,bold=TRUE)
 ```
@@ -125,11 +125,11 @@ A student asked five students what their home state is and how they got to campu
 tmp1 <- data.frame(student=rep(1:5),state=c("TX","IA","WI","WI","MN"),transpo=c("plane","car","car","car","moped"))
 tmp2 <- tidyr::pivot_longer(tmp1,cols=state:transpo,names_to="question",values_to="answer")
 knitr::kable(tmp1,align="c",caption="Data frame 1",table.attr="style='width:30%;'") %>%
-  kableExtra::kable_classic(full_width=FALSE,html_font="Cambria") %>%
+  kableExtra::kable_classic(html_font="Cambria") %>%
   kableExtra::kable_styling(bootstrap_options=c("hover","condensed"),position="float_left") %>%
   kableExtra::row_spec(0,bold=TRUE)
 knitr::kable(tmp2,align="c",caption="Data frame 2",table.attr="style='width:30%;'") %>%
-  kableExtra::kable_classic(full_width=FALSE,html_font="Cambria") %>%
+  kableExtra::kable_classic(html_font="Cambria") %>%
   kableExtra::kable_styling(bootstrap_options=c("hover","condensed"),position="right") %>%
   kableExtra::row_spec(0,bold=TRUE)
 ```
