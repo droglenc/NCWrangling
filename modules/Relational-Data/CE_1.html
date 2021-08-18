@@ -10,7 +10,7 @@ css: "/css/modules.css"
 <div id="join-identification-i" class="section level2">
 <h2>Join Identification I</h2>
 <p>Suppose that you have two simple data frames <code>G</code> and <code>H</code>.</p>
-<table class=" lightable-classic table table-hover table-condensed" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; float: left; margin-right: 10px;">
+<table style="width:20%; font-family: Cambria; margin-left: auto; margin-right: auto; float: left; margin-right: 10px;" class=" lightable-classic table table-hover table-condensed">
 <caption>
 Data frame G
 </caption>
@@ -59,7 +59,7 @@ B
 </tr>
 </tbody>
 </table>
-<table class=" lightable-classic table table-hover table-condensed" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; margin-right: 0; margin-left: auto">
+<table style="width:20%; font-family: Cambria; margin-left: auto; margin-right: auto; margin-right: 0; margin-left: auto" class=" lightable-classic table table-hover table-condensed">
 <caption>
 Data frame H
 </caption>
@@ -135,7 +135,7 @@ D
 <div id="join-identification-iii" class="section level2">
 <h2>Join Identification III</h2>
 <p>Suppose that you have two simple data frames <code>A</code> and <code>B</code>.</p>
-<table class=" lightable-classic table table-hover table-condensed" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; float: left; margin-right: 10px;">
+<table style="width:20%; font-family: Cambria; margin-left: auto; margin-right: auto; float: left; margin-right: 10px;" class=" lightable-classic table table-hover table-condensed">
 <caption>
 Data frame A
 </caption>
@@ -210,7 +210,7 @@ sun
 </tr>
 </tbody>
 </table>
-<table class=" lightable-classic table table-hover table-condensed" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; margin-right: 0; margin-left: auto">
+<table style="width:20%; font-family: Cambria; margin-left: auto; margin-right: auto; margin-right: 0; margin-left: auto" class=" lightable-classic table table-hover table-condensed">
 <caption>
 Data frame B
 </caption>
@@ -875,32 +875,32 @@ NA
 <ol>
 <li>Create data frames in R that match the <code>A</code> and <code>B</code> data frames from the “Join Identification III” question.</li>
 <li>Use join commands in R to create each of the <code>Z</code>, <code>Y</code>, <code>W</code>, <code>V</code>, <code>U</code>, and <code>T</code> data frames in the “Join Identification III” questions from the <code>A</code> and <code>B</code> data frames. Show your code and the complete resulting data frame.</li>
-<li>Reflect on your answers in “Join Identification III” and in the previous question. Were each of your answers correct? Which ones (if any) were not correct and where do you think your reasoning went awry?</li>
+<li>Reflect on your answers in “Join Identification III” and the results here. Were each of your answers in “Join Identification III” correct? Which ones (if any) were not correct and where do you think your reasoning went awry?</li>
 </ol>
 <p> </p>
 </div>
 <div id="ski-club" class="section level2">
 <h2>Ski Club</h2>
-<p>A group of 16 competitive but amateur skiers formed a loosely-knit “club” to motivate themselves to keep skiing. The record keeper for the club developed a data organization that has four sheets in <a href="https://github.com/droglenc/NCWrangling/raw/main/resources/data/Skiers.xlsx">this Excel file</a>. The “skiers” sheet has information about each skier including a unique <code>bibID</code> code. The “races” sheet has information about each ski race that members of the club partake in and includes a unique “raceID” code. To date, two races have been entered into the spreadsheet. The “race19” results has results from the first race (i.e., <code>raceID</code>==1) for each of the members that participated in that race. The “race20” sheet is the samee for the second race (i.e., <code>raceID</code>==2). You should download the Excel file and load each sheet into a separate dataframe in R. Use these data frames to perform the following tasks. Show your R code and the resulting data frame.</p>
+<p>A group of 16 competitive but amateur skiers formed a loosely-knit “club” to motivate themselves to keep skiing. The record keeper for the club developed a data organization scheme that uses four sheets in <a href="https://github.com/droglenc/NCWrangling/raw/main/resources/data/Skiers.xlsx">this Excel file</a>. The “skiers” sheet has information about each skier including a unique <code>bibID</code> code. The “races” sheet has information about each ski race that members of the club partook in and includes a unique “raceID” code. To date, two races have been entered into the spreadsheet. The “race19” sheet has results from the first race (i.e., <code>raceID</code>==1) for each of the members that participated in that race. The “race20” sheet is the same for the second race (i.e., <code>raceID</code>==2). Download the Excel file and load each sheet into a separate dataframe in R. Use these data frames to perform the following tasks. Show your R code and the resulting data frame.</p>
 <ol>
 <li><p>Show results from both races for racers that were in both races.</p></li>
-<li><p>Appended the racers’ personal information to the data frame from the previous question. As a matter of aesthetics do this in a manner such that the personal information is left most in the resulting data frame. [<em>Note that there should be no missing values in this data frame.</em>]</p></li>
+<li><p>Append the racers’ personal information to the data frame from the previous question. As a matter of aesthetics do this in a manner such that the personal information is left most in the resulting data frame. [<em>Note that there should be no missing values in this data frame.</em>]</p></li>
 <li><p>Note that some of the variables in the data frame from the previous question have suffixes appended to the name. Explain why you think this happened and why it is needed.</p></li>
 <li><p>Show results for the first race <em>only</em> for racers that were in both races.</p></li>
 <li><p>Show results for the first race <em>only</em> for racers that were <em>only</em> in the first race.</p></li>
-<li><p>Show “results” for both races for all racers that were in the first race.</p></li>
+<li><p>Show “results” for both races for all racers that were in the first race. [<em>There may be missing data in this data frame</em>.]</p></li>
 <li><p>Construct a “master race file” that has results for all racers for all races.</p></li>
 </ol>
 <p> </p>
 </div>
 <div id="food-insecurity-surveys" class="section level2">
 <h2>Food Insecurity Surveys</h2>
-<p>Ashland County administrators want to assess factors that lead to food insecurity among residents of Ashland County. Towards this end they will distribute a food insecurity survey to as many households in the county as possible. As it is not know who is food insecure they have decided to either place the surveys at locations where those that are food insecure at likely to frequent. In addition, they will hand out some surveys directly to people at these locations.</p>
-<p>To monitor the return rate of the surveys the administrators have uniquely numbered each of 1000 surveys and will keep track of where, when, and how each survey was delivered. This information is recorded in the “Surveys” sheet of <a href="https://github.com/droglenc/NCWrangling/raw/main/resources/data/FoodInsecuritySurvey.xlsx">FoodInsecuritySurvey.xlsx</a>. Information, including the unique survey number, on the returned surveys was entered separately in the “Results” sheet of the same Excel workbook. Meta data for the two sheets is in the “meta” sheet of the same workbook. Load these data frames into R.</p>
-<p>Two of an inner, left, right, or full join can be used to create a new data frame that has all variables from both data frames present but only for surveys that have been returned.</p>
+<p>Ashland County administrators want to assess factors that lead to food insecurity among residents of Ashland County. Towards this end they will distribute a food insecurity survey to as many households in the county as possible. As it is not known who is food insecure they have decided to distribute the surveys at locations where those that are food insecure are likely to frequent. At these location, the surveys will either be placed where respondents can take a survey or not, or the administrators will physically hand some surveys directly to people.</p>
+<p>To monitor the return rate of the surveys, the administrators have uniquely numbered each of 1000 surveys and will keep track of where, when, and how each survey was delivered. This information is recorded in the “Surveys” sheet of <a href="https://github.com/droglenc/NCWrangling/raw/main/resources/data/FoodInsecuritySurvey.xlsx">FoodInsecuritySurvey.xlsx</a>. Information, including the unique survey number, on the returned surveys was entered separately in the “Results” sheet of the same Excel workbook. Meta data for the two sheets is in the “meta” sheet of the same workbook. Load data from the “Surveys” and “Results” sheets into separate data frames in R.</p>
 <ol>
-<li>Show how to use both of these joins to create this new data frame. Comment on which method is preferred (if either) and why.</li>
-<li>Explain why the other two joins are not appropriate for this task.</li>
+<li><p>Use at inner, full, left, or right join to create a new data frame that has all variables from both data frames present but only for surveys that have been returned.</p></li>
+<li><p>Repeat the previous question using a different type of join.</p></li>
+<li><p>Explain why the other two joins are not appropriate for this task.</p></li>
 </ol>
 </div>
 
