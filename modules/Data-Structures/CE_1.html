@@ -10,17 +10,17 @@ css: "/css/modules.css"
 <div id="vectors" class="section level2">
 <h2>Vectors</h2>
 <ol>
-<li><p>Create four vectors each with at least five values of your choosing. Each vector must have a different class type and should be assigned to an object with an (at least semi-) informative name. Show the code that created the vector, showed the contents of the vector, and demonstrated the class of the vector.</p></li>
-<li><p>With one of your vectors from the first question, demonstrate code that will show one specific item in the vector.</p></li>
-<li><p>With one of your vectors from the first question, demonstrate code that will show multiple specific items in the vector.</p></li>
+<li><p>Create four vectors each with at least five values of your choosing. Each vector must have a different class type and should be assigned to an object with an (at least semi-) informative name. Show the code that created the vector, displayed the contents of the vector, and demonstrated the class of the vector.</p></li>
+<li><p>With one of your vectors from the first question, demonstrate code that will show one specific element in the vector.</p></li>
+<li><p>With one of your vectors from the first question, demonstrate code that will show multiple specific elements in the vector.</p></li>
 </ol>
 <p> </p>
 </div>
 <div id="data-frames-i" class="section level2">
 <h2>Data Frames I</h2>
 <ol>
-<li><p>Create a data frame that has at least three related variables recorded on at least five individuals. You may use the same variables/data as in the “Vectors” question if the data in your vectors are related. Show the code that created the data frame, showed the full contents of the data frame, and showed the structure of the data frame.</p></li>
-<li><p>Show how to find one specific value in your data frame.</p></li>
+<li><p>Create a data frame that has at least three related variables recorded on at least five individuals. You may use the same variables/data as in the “Vectors” question if the data in your vectors are related. Show the code that created the data frame, displayed the full contents of the data frame, and displayed the structure of the data frame.</p></li>
+<li><p>Show how to find one specific element (or value) in your data frame.</p></li>
 <li><p>Show how to isolate a single row from your data frame.</p></li>
 <li><p>Show how to isolate multiple rows from your data frame.</p></li>
 <li><p>Show three methods to isolate a single variable from your data frame.</p></li>
@@ -29,14 +29,380 @@ css: "/css/modules.css"
 </div>
 <div id="data-frames-ii" class="section level2">
 <h2>Data Frames II</h2>
-<p>Enter the following credit load by year-in-school data into a data frame in tidy format. Show the code that created the data frame, showed the full contents of the data frame, and showed the structure of the data frame.</p>
+<p>A student asked five male and five female students what their home state is. The data are recorded in the two tables below. Which one of these tables in a “tidy” format? Explain your reasoning.</p>
+<table style="width:30%; font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; float: left; margin-right: 10px;" class=" lightable-classic table table-hover table-condensed">
+<caption>
+Data frame 1
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;font-weight: bold;">
+male
+</th>
+<th style="text-align:center;font-weight: bold;">
+female
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+TX
+</td>
+<td style="text-align:center;">
+IL
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+IA
+</td>
+<td style="text-align:center;">
+WI
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+WI
+</td>
+<td style="text-align:center;">
+WI
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+WI
+</td>
+<td style="text-align:center;">
+OH
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+MN
+</td>
+<td style="text-align:center;">
+CA
+</td>
+</tr>
+</tbody>
+</table>
+<table style="width:30%; font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; margin-right: 0; margin-left: auto" class=" lightable-classic table table-hover table-condensed">
+<caption>
+Data frame 2
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;font-weight: bold;">
+gender
+</th>
+<th style="text-align:center;font-weight: bold;">
+state
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+male
+</td>
+<td style="text-align:center;">
+TX
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+female
+</td>
+<td style="text-align:center;">
+IL
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+male
+</td>
+<td style="text-align:center;">
+IA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+female
+</td>
+<td style="text-align:center;">
+WI
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+male
+</td>
+<td style="text-align:center;">
+WI
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+female
+</td>
+<td style="text-align:center;">
+WI
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+male
+</td>
+<td style="text-align:center;">
+WI
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+female
+</td>
+<td style="text-align:center;">
+OH
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+male
+</td>
+<td style="text-align:center;">
+MN
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+female
+</td>
+<td style="text-align:center;">
+CA
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+</div>
+<div id="data-frames-iii" class="section level2">
+<h2>Data Frames III</h2>
+<p>A student asked five students what their home state is and how they got to campus. The data are recorded in the two tables below. Which one of these tables in a “tidy” format? Explain your reasoning.</p>
+<table style="width:30%; font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; float: left; margin-right: 10px;" class=" lightable-classic table table-hover table-condensed">
+<caption>
+Data frame 1
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;font-weight: bold;">
+student
+</th>
+<th style="text-align:center;font-weight: bold;">
+state
+</th>
+<th style="text-align:center;font-weight: bold;">
+transpo
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+TX
+</td>
+<td style="text-align:center;">
+plane
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+IA
+</td>
+<td style="text-align:center;">
+car
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+WI
+</td>
+<td style="text-align:center;">
+car
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+WI
+</td>
+<td style="text-align:center;">
+car
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+MN
+</td>
+<td style="text-align:center;">
+moped
+</td>
+</tr>
+</tbody>
+</table>
+<table style="width:30%; font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto; margin-right: 0; margin-left: auto" class=" lightable-classic table table-hover table-condensed">
+<caption>
+Data frame 2
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;font-weight: bold;">
+student
+</th>
+<th style="text-align:center;font-weight: bold;">
+question
+</th>
+<th style="text-align:center;font-weight: bold;">
+answer
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+state
+</td>
+<td style="text-align:center;">
+TX
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+transpo
+</td>
+<td style="text-align:center;">
+plane
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+state
+</td>
+<td style="text-align:center;">
+IA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+transpo
+</td>
+<td style="text-align:center;">
+car
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+state
+</td>
+<td style="text-align:center;">
+WI
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+transpo
+</td>
+<td style="text-align:center;">
+car
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+state
+</td>
+<td style="text-align:center;">
+WI
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+transpo
+</td>
+<td style="text-align:center;">
+car
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+state
+</td>
+<td style="text-align:center;">
+MN
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+transpo
+</td>
+<td style="text-align:center;">
+moped
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+</div>
+<div id="data-frames-iv" class="section level2">
+<h2>Data Frames IV</h2>
+<p>Enter the following credit load by year-in-school data into a data frame in tidy format. Show the code that created the data frame, displayed the full contents of the data frame, and displayed the structure of the data frame.</p>
 <pre><code>First-Year  12  14  17  12
 Sophomore   15  16  14
 Junior      13  16  15  15  13
 Senior      12  17</code></pre>
-</div>
-<div id="data-frames-iii" class="section level2">
-<h2>Data Frames III</h2>
 </div>
 
 

@@ -43,5 +43,7 @@ XXX
 ## Resources
 
 * [Tidy Data](https://r4ds.had.co.nz/tidy-data.html) chapter of [*R for Data Science*](https://r4ds.had.co.nz/index.html).
-* [Do You Know How To Make Tidy Data? Here's How.](https://about.dataclassroom.com/blog/keep-your-data-tidy).
-
+* [What is Tidy Data?](https://www.youtube.com/watch?v=uvDKLIK8i7E) video (~8 mins) by Joshua French.
+* [What is Tidy Data?](https://towardsdatascience.com/what-is-tidy-data-d58bb9ad2458) by Towards Data Science.
+* [Do You Know How To Make Tidy Data? Here's How.](https://about.dataclassroom.com/blog/keep-your-data-tidy) by Data Classroom.
+* [Tidy Data in R](https://www.youtube.com/watch?v=Z6TtCJw-ig0) in Introduction to R for Environmental Science.
