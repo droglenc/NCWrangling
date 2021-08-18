@@ -27,12 +27,12 @@ library(kableExtra)
 ----
 
 ## Lake Erie Walleye
-Lake Erie is world-renowned for its Walleye (*Sander vitreus*) population and fishing. The Ohio Department of Natural Resources samples Walleye with gillnets from three regions of Lake Erie every fall. Their results from 2003-2014 are stored in [this file](https://raw.githubusercontent.com/droglenc/FSAdata/master/data-raw/WalleyeErie2.csv) from the fishR webpage. [Metadata for the data file is here](http://derekogle.com/fishR/data/data-html/WalleyeErie2.html). The following tasks should be completed to prepare these data for further analysis.
+Lake Erie is world-renowned for its [Walleye](https://www.dnr.state.mn.us/fish/walleye/biology.html) (*Sander vitreus*) population and fishing. The Ohio Department of Natural Resources samples Walleye with [gillnets](https://www.fisheries.noaa.gov/national/bycatch/fishing-gear-gillnets) from three regions of Lake Erie every fall. Their results from 2003-2014 are stored in [this file](https://raw.githubusercontent.com/droglenc/FSAdata/master/data-raw/WalleyeErie2.csv) from the fishR webpage. [Metadata for the data file is here](http://derekogle.com/fishR/data/data-html/WalleyeErie2.html). The following tasks should be completed to prepare these data for further analysis.
 
 * The regional sampling location should be converted from their numerical codes (1, 2, 3) to their actual regional names.
 * A standard weight variable should be computed from the observed lengths with this formula -- 0.00000352*LENGTH<sup>3.18</sup>.
 * A relative weight variable should be computed by dividing the observed weight by the calculated standard weight and multiplying by 100.
-* Create a new variable that has the words under "status" based on the lengths under "length".
+* A new variable should be created that has the words under "status" based on the lengths under "length" below.
 
 ```{r results='markup'}
 library(FSA)
@@ -44,13 +44,15 @@ tibble(status=names(tmp),
   kableExtra::row_spec(0,bold=TRUE)
 ```
 
-* The "stock status" variable (i.e., "substock", "stock", etc.) variable should immediately follow the length variable.
-* The standard and relative weight variables should immediately follow the observed weight variable.
+* The "stock status" variable (i.e., "substock", "stock", etc.) variable should be moved to immediately follow the length variable.
+* The standard and relative weight variables should be moved to immediately follow the observed weight variable.
 * The gear set identification, sampling grid location, and maturity variables should be removed.
 * The year variable should be moved to be the first variable.
-* The otolith age variable should be moved to before the sex variable.
+* The otolith age variable should be moved to be before the sex variable.
 
-```{r}
+Your final data frame should like the following.
+
+```{r results='hold'}
 wae <- read_csv("https://raw.githubusercontent.com/droglenc/FSAdata/master/data-raw/WalleyeErie2.csv") %>%
   select(-setID,-grid,-mat) %>%
   mutate(loc=plyr::mapvalues(loc,from=c(1,2,3),
@@ -107,7 +109,7 @@ ffr <- readxl::read_excel(fn,sheet="FrogResults",skip=3,na=nas) %>%
                                   to=c("Professional","Volunteer")))
 ```
 
-Following these three modifications to the frog results data frame create a new data frame with the following modifications
+Following these modifications to the frog results data frame create a new data frame with the following modifications
 
 * Create new variables that have the counts for each frog species in one variable and a related variable that has the name of the frog species in it. [*Hint: this requires a pivot.*]
 * Change the abbreviations in the new frog species variable to actual species names. [*Hint: examine the meta sheet in the Excel workbook.*]
@@ -127,7 +129,6 @@ ffr2 <- pivot_longer(ffr,cols=AT:CF,names_to="species",values_to="count") %>%
                                       "Western Chorus Frog")),
          occurrence=ifelse(count>0,"yes","no")) %>%
   relocate(site)
-
 ```
 
 Use the two modified data frames from above to add lake information (i.e., development, lake area, alkalinity, and ph) to the frog results. [*Hint: This requires a join*] Make sure the lake information immediately follows the site/location name.
@@ -137,8 +138,11 @@ ffr3 <- left_join(ffr2,fli,by="site") %>%
   relocate(type:pH,.after=site)
 ```
 
-In the end, our data frame should be similar to this one (same number of rows and columns, but perhaps different variable names).
+In the end, your data frame should be similar to this one (same number of rows and columns, but perhaps different variable names).
 
 ```{r results='hold'}
 ffr3
+```
+```{r results='hold'}
+str(ffr3,get.attr=FALSE)
 ```

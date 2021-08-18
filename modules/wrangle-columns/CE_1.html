@@ -9,12 +9,12 @@ css: "/css/modules.css"
 <hr />
 <div id="lake-erie-walleye" class="section level2">
 <h2>Lake Erie Walleye</h2>
-<p>Lake Erie is world-renowned for its Walleye (<em>Sander vitreus</em>) population and fishing. The Ohio Department of Natural Resources samples Walleye with gillnets from three regions of Lake Erie every fall. Their results from 2003-2014 are stored in <a href="https://raw.githubusercontent.com/droglenc/FSAdata/master/data-raw/WalleyeErie2.csv">this file</a> from the fishR webpage. <a href="http://derekogle.com/fishR/data/data-html/WalleyeErie2.html">Metadata for the data file is here</a>. The following tasks should be completed to prepare these data for further analysis.</p>
+<p>Lake Erie is world-renowned for its <a href="https://www.dnr.state.mn.us/fish/walleye/biology.html">Walleye</a> (<em>Sander vitreus</em>) population and fishing. The Ohio Department of Natural Resources samples Walleye with <a href="https://www.fisheries.noaa.gov/national/bycatch/fishing-gear-gillnets">gillnets</a> from three regions of Lake Erie every fall. Their results from 2003-2014 are stored in <a href="https://raw.githubusercontent.com/droglenc/FSAdata/master/data-raw/WalleyeErie2.csv">this file</a> from the fishR webpage. <a href="http://derekogle.com/fishR/data/data-html/WalleyeErie2.html">Metadata for the data file is here</a>. The following tasks should be completed to prepare these data for further analysis.</p>
 <ul>
 <li>The regional sampling location should be converted from their numerical codes (1, 2, 3) to their actual regional names.</li>
 <li>A standard weight variable should be computed from the observed lengths with this formula – 0.00000352*LENGTH<sup>3.18</sup>.</li>
 <li>A relative weight variable should be computed by dividing the observed weight by the calculated standard weight and multiplying by 100.</li>
-<li>Create a new variable that has the words under “status” based on the lengths under “length”.</li>
+<li>A new variable should be created that has the words under “status” based on the lengths under “length” below.</li>
 </ul>
 <table class=" lightable-classic lightable-hover" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -79,12 +79,27 @@ trophy
 </tbody>
 </table>
 <ul>
-<li>The “stock status” variable (i.e., “substock”, “stock”, etc.) variable should immediately follow the length variable.</li>
-<li>The standard and relative weight variables should immediately follow the observed weight variable.</li>
+<li>The “stock status” variable (i.e., “substock”, “stock”, etc.) variable should be moved to immediately follow the length variable.</li>
+<li>The standard and relative weight variables should be moved to immediately follow the observed weight variable.</li>
 <li>The gear set identification, sampling grid location, and maturity variables should be removed.</li>
 <li>The year variable should be moved to be the first variable.</li>
-<li>The otolith age variable should be moved to before the sex variable.</li>
+<li>The otolith age variable should be moved to be before the sex variable.</li>
 </ul>
+<p>Your final data frame should like the following.</p>
+<pre><code>## # A tibble: 33,734 x 9
+##     year loc             tl status      w    ws    wr   age sex   
+##    &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; 
+##  1  2003 Toledo-Huron   360 stock     460  474.  97.1     2 male  
+##  2  2003 Toledo-Huron   371 stock     571  521. 110.      2 male  
+##  3  2003 Toledo-Huron   375 stock     507  539.  94.0     2 male  
+##  4  2003 Toledo-Huron   375 stock     584  539. 108.      2 male  
+##  5  2003 Toledo-Huron   375 stock     537  539.  99.5     2 male  
+##  6  2003 Toledo-Huron   376 stock     553  544. 102.      2 male  
+##  7  2003 Toledo-Huron   379 stock     500  558.  89.6     2 female
+##  8  2003 Toledo-Huron   379 stock     522  558.  93.6     2 male  
+##  9  2003 Toledo-Huron   380 quality   525  563.  93.3     2 male  
+## 10  2003 Toledo-Huron   380 quality   543  563.  96.5     2 male  
+## # ... with 33,724 more rows</code></pre>
 <p> </p>
 </div>
 <div id="northern-wisconsin-frogs" class="section level2">
@@ -102,7 +117,7 @@ trophy
 <li>Remove the comments variable.</li>
 <li>Make the values in the surveyor variable more informative</li>
 </ul>
-<p>Following these three modifications to the frog results data frame create a new data frame with the following modifications</p>
+<p>Following these modifications to the frog results data frame create a new data frame with the following modifications</p>
 <ul>
 <li>Create new variables that have the counts for each frog species in one variable and a related variable that has the name of the frog species in it. [<em>Hint: this requires a pivot.</em>]</li>
 <li>Change the abbreviations in the new frog species variable to actual species names. [<em>Hint: examine the meta sheet in the Excel workbook.</em>]</li>
@@ -110,23 +125,37 @@ trophy
 <li>Make sure that the site/location name variable is left-most in the data frame.</li>
 </ul>
 <p>Use the two modified data frames from above to add lake information (i.e., development, lake area, alkalinity, and ph) to the frog results. [<em>Hint: This requires a join</em>] Make sure the lake information immediately follows the site/location name.</p>
-<p>In the end, our data frame should be similar to this one (same number of rows and columns, but perhaps different variable names).</p>
+<p>In the end, your data frame should be similar to this one (same number of rows and columns, but perhaps different variable names).</p>
 <pre><code>## # A tibble: 2,904 x 14
-##    site      type    Area   Alk    pH DATE                  Run air_temp
-##    &lt;chr&gt;     &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dttm&gt;              &lt;dbl&gt;    &lt;dbl&gt;
-##  1 Muskellu~ Devel~   2.4    20   6.8 1997-05-10 00:00:00     1       48
-##  2 Muskellu~ Devel~   2.4    20   6.8 1997-05-10 00:00:00     1       48
-##  3 Muskellu~ Devel~   2.4    20   6.8 1997-05-10 00:00:00     1       48
-##  4 Muskellu~ Devel~   2.4    20   6.8 1997-05-10 00:00:00     1       48
-##  5 Muskellu~ Devel~   2.4    20   6.8 1997-05-10 00:00:00     1       48
-##  6 Muskellu~ Devel~   2.4    20   6.8 1997-05-10 00:00:00     1       48
-##  7 Muskellu~ Devel~   2.4    20   6.8 1997-05-10 00:00:00     1       48
-##  8 Muskellu~ Devel~   2.4    20   6.8 1997-05-10 00:00:00     1       48
-##  9 Muskellu~ Devel~   2.4    20   6.8 1997-05-10 00:00:00     1       48
-## 10 Muskellu~ Devel~   2.4    20   6.8 1997-05-10 00:00:00     1       48
-## # ... with 2,894 more rows, and 6 more variables: water_temp &lt;dbl&gt;,
-## #   Surveyor &lt;chr&gt;, pairVP &lt;dbl&gt;, species &lt;chr&gt;, count &lt;dbl&gt;,
-## #   occurrence &lt;chr&gt;</code></pre>
+##    site  type   Area   Alk    pH DATE                  Run air_temp water_temp
+##    &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dttm&gt;              &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;
+##  1 Musk~ Deve~   2.4    20   6.8 1997-05-10 00:00:00     1       48         49
+##  2 Musk~ Deve~   2.4    20   6.8 1997-05-10 00:00:00     1       48         49
+##  3 Musk~ Deve~   2.4    20   6.8 1997-05-10 00:00:00     1       48         49
+##  4 Musk~ Deve~   2.4    20   6.8 1997-05-10 00:00:00     1       48         49
+##  5 Musk~ Deve~   2.4    20   6.8 1997-05-10 00:00:00     1       48         49
+##  6 Musk~ Deve~   2.4    20   6.8 1997-05-10 00:00:00     1       48         49
+##  7 Musk~ Deve~   2.4    20   6.8 1997-05-10 00:00:00     1       48         49
+##  8 Musk~ Deve~   2.4    20   6.8 1997-05-10 00:00:00     1       48         49
+##  9 Musk~ Deve~   2.4    20   6.8 1997-05-10 00:00:00     1       48         49
+## 10 Musk~ Deve~   2.4    20   6.8 1997-05-10 00:00:00     1       48         49
+## # ... with 2,894 more rows, and 5 more variables: Surveyor &lt;chr&gt;,
+## #   pairVP &lt;dbl&gt;, species &lt;chr&gt;, count &lt;dbl&gt;, occurrence &lt;chr&gt;</code></pre>
+<pre><code>## tibble [2,904 x 14] (S3: tbl_df/tbl/data.frame)
+##  $ site      : chr [1:2904] &quot;Muskellunge access&quot; &quot;Muskellunge access&quot; &quot;Muskellunge access&quot; &quot;Muskellunge access&quot; ...
+##  $ type      : chr [1:2904] &quot;Developed&quot; &quot;Developed&quot; &quot;Developed&quot; &quot;Developed&quot; ...
+##  $ Area      : num [1:2904] 2.4 2.4 2.4 2.4 2.4 2.4 2.4 2.4 2.4 2.4 ...
+##  $ Alk       : num [1:2904] 20 20 20 20 20 20 20 20 20 20 ...
+##  $ pH        : num [1:2904] 6.8 6.8 6.8 6.8 6.8 6.8 6.8 6.8 6.8 6.8 ...
+##  $ DATE      : POSIXct[1:2904], format: &quot;1997-05-10&quot; &quot;1997-05-10&quot; ...
+##  $ Run       : num [1:2904] 1 1 1 1 1 1 1 1 1 1 ...
+##  $ air_temp  : num [1:2904] 48 48 48 48 48 48 48 48 48 48 ...
+##  $ water_temp: num [1:2904] 49 49 49 49 49 49 49 49 49 49 ...
+##  $ Surveyor  : chr [1:2904] &quot;Professional&quot; &quot;Professional&quot; &quot;Professional&quot; &quot;Professional&quot; ...
+##  $ pairVP    : num [1:2904] NA NA NA NA NA NA NA NA NA NA ...
+##  $ species   : chr [1:2904] &quot;American Toad&quot; &quot;Spring Peeper&quot; &quot;Wood Frog&quot; &quot;Northern Leopard Frog&quot; ...
+##  $ count     : num [1:2904] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ occurrence: chr [1:2904] &quot;no&quot; &quot;no&quot; &quot;no&quot; &quot;no&quot; ...</code></pre>
 </div>
 
 
