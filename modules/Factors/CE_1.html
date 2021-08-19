@@ -9,14 +9,14 @@ css: "/css/modules.css"
 <hr />
 <div id="lake-activities" class="section level2">
 <h2>Lake Activities</h2>
-<p>Iron River Pike Chain of Lakes Association conducted a survey of residents that lived on the chain of lakes. One question in the survey asked respondents to state the activity that was most important reason for them to own property on the chain of lakes. The answers to this question are in <a href="https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/LakeActivity.csv">LakeActivity.csv</a>. Use these data to perform the following tasks.</p>
+<p>The Iron River Pike Chain of Lakes Association conducted a survey of residents that live on the chain of lakes. One question in the survey asked respondents to state the activity that was the most important reason for them to own property on the chain of lakes. The answers to this question are in <a href="https://raw.githubusercontent.com/droglenc/NCWrangling/main/resources/data/LakeActivity.csv">LakeActivity.csv</a>. Use these data to perform the following tasks.</p>
 <ol>
-<li>Compute the frequency and percentage of responses for each activity (with the activities in alphabetical order).</li>
-<li>Compute the frequency and percentage of responses for each activity with the activities in descending order of frequency.</li>
-<li>Compute the frequency and percentage of responses for each activity with the activities in descending order of frequency and activities with very minor frequencies of responses lumped into a single “Other” category. [<em>Make sure the “Other” category is listed last (and in the following questions).</em>]</li>
-<li>Compute the frequency and percentage of responses for each activity with the activities in descending order of frequency and activities with fewer than 5% of responses lumped into a single “Other” category. [<em>Use <code>fct_lump_prop()</code> which was not in the reading. Look at <a href="https://forcats.tidyverse.org/reference/fct_lump.html">the documentation for <code>fct_lump_prop()</code></a> for help with this.</em>]</li>
-<li>Compute the frequency and percentage of responses for each activity with the activities in descending order of frequency and activities with fewer than 10 responses lumped into a single “Other” category. [<em>Use <code>fct_lump_min()</code> which was not in the reading. Look at <a href="https://forcats.tidyverse.org/reference/fct_lump.html">the documentation for <code>fct_lump_min()</code></a> for help with this.</em>]</li>
-<li>Compute the frequency and percentage of responses for each activity but with the specific activities rearranged into two categories – “silent” and “Non-silent”. [*Use your own judgment about what “silent” means.]</li>
+<li><p>Compute the frequency and percentage of responses for each activity (with the activities in alphabetical order).</p></li>
+<li><p>Compute the frequency and percentage of responses for each activity with the activities in descending order of frequency.</p></li>
+<li><p>Compute the frequency and percentage of responses for each activity with the activities in descending order of frequency and activities with very minor frequencies of responses lumped into a single “Other” category. [<em>Make sure the “Other” category is listed last (and also in the following questions).</em>]</p></li>
+<li><p>Compute the frequency and percentage of responses for each activity with the activities in descending order of frequency and activities with fewer than 5% of responses lumped into a single “Other” category. [<em>Use <code>fct_lump_prop()</code> which was not in the reading. Look at <a href="https://forcats.tidyverse.org/reference/fct_lump.html">the documentation for <code>fct_lump_prop()</code></a> for help with this.</em>]</p></li>
+<li><p>Compute the frequency and percentage of responses for each activity with the activities in descending order of frequency and activities with fewer than 10 responses lumped into a single “Other” category. [<em>Use <code>fct_lump_min()</code> which was not in the reading. Look at <a href="https://forcats.tidyverse.org/reference/fct_lump.html">the documentation for <code>fct_lump_min()</code></a> for help with this.</em>]</p></li>
+<li><p>Compute the frequency and percentage of responses for each activity but with the specific activities rearranged into two categories – “silent” and “Non-silent”. [<em>Use your own judgment about what “silent” means.</em>]</p></li>
 </ol>
 <p> </p>
 </div>
@@ -24,11 +24,11 @@ css: "/css/modules.css"
 <h2>Quarterbacks</h2>
 <p><a href="../wrangle-rows/CE_1.html#quarterbacks-i">In this exercise</a> you constructed a data frame of statistics for all NCAA quarterbacks in 2020. Return to those data for this exercise.</p>
 <ol>
-<li>Create a new variable in the data frame that treats conference as a factor but consolidates all non “Power 5” conferences (as defined <a href="../wrangle-rows/CE_1.html#quarterbacks-i">in this exercise</a>) into one category called “Other”. Make sure that the “Other” category is the last level of this new variable.</li>
-<li>Compute the mean (and standard deviation) passer rating across all quarterbacks in the conferences defined by the variable you created in the first question.</li>
-<li>Create another new variable (from the previously new variable) that will order the conferences in descending order of mean passer rating. Again, make sure that the “Other” category is the last level of this new variable.</li>
-<li>Compute the mean (and standard deviation) passer rating across all quarterbacks in the conferences defined by the variable you created in the previous question.</li>
-<li>Repeat the previous question but use a new variable that uses “Southeast Conference” instead of “SEC” and “Atlantic Coast Conference” instead of “ACC”.</li>
+<li><p>Create a new variable in the data frame that treats conference as a factor but consolidates all non “Power 5” conferences (as defined <a href="../wrangle-rows/CE_1.html#quarterbacks-i">in this exercise</a>) into one category called “Other”. Make sure that the “Other” category is the last level of this new variable.</p></li>
+<li><p>Compute the mean (and standard deviation) passer rating across all quarterbacks in the conferences defined by the variable you created in the first question.</p></li>
+<li><p>Create another new variable (from the previously new variable) that will order the conferences in descending order of mean passer rating. Again, make sure that the “Other” category is the last level of this new variable.</p></li>
+<li><p>Compute the mean (and standard deviation) passer rating across all quarterbacks in the conferences defined by the variable you created in the previous question.</p></li>
+<li><p>Repeat the previous question but use a new variable that uses “Southeast Conference” instead of “SEC” and “Atlantic Coast Conference” instead of “ACC”.</p></li>
 </ol>
 <p> </p>
 </div>
@@ -36,8 +36,8 @@ css: "/css/modules.css"
 <h2>Stream Discharge</h2>
 <p><a href="../Dates-Times/CE_1.html#stream-discharge">In this exercise</a> you obtained stream discharge data for the Bois Brule and Bad rivers in northern Wisconsin in 2020. For this exercise use just the data from the Bad River.</p>
 <ol>
-<li>Compute the mean (and standard deviation) discharge by month (with months ordered from January to December).</li>
-<li>Compute the mean (and standard deviation) discharge by “season” (define “Winter” as January-March, “Spring” as April-June, “Summer” as July-September, and “Fall” as October-December). Make sure your results are in a reasonable order.</li>
+<li><p>Compute the mean (and standard deviation) discharge by month (with months ordered from January to December).</p></li>
+<li><p>Compute the mean (and standard deviation) discharge by “season” (define “Winter” as January-March, “Spring” as April-June, “Summer” as July-September, and “Fall” as October-December). Make sure your results are in a reasonable order.</p></li>
 </ol>
 </div>
 
