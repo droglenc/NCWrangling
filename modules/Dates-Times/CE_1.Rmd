@@ -33,8 +33,6 @@ Follow the same descriptions as in the reading for obtaining (just) stream **dis
 knitr::include_graphics("WI_discharge_map.JPG")
 ```
 
-Combine these data into one data frame and compute mean discharge by month for each river. Rearrange the resultant data frame so that the monthly results for both rivers are in side-by-side columns. Show your full code and results and comment on any observations that you can make from your summaries.
-
 ```{r}
 bbr <- read_tsv("https://nwis.waterdata.usgs.gov/usa/nwis/uv/?cb_00060=on&format=rdb&site_no=04025500&period=&begin_date=2020-01-01&end_date=2020-12-31",
                 comment="#") %>%
@@ -58,6 +56,9 @@ dschrg <- bind_rows(bad,bbr) %>%
   select(-site_no) %>%
   relocate(river)
 ```
+
+Combine these data into one data frame and compute mean discharge by month for each river. Rearrange the resultant data frame so that the monthly results for both rivers are in side-by-side columns. Show your full code and results and comment on any observations that you can make from your summaries.
+
 ```{r}
 dschrg %>%
   group_by(river,mon) %>%
@@ -65,7 +66,6 @@ dschrg %>%
   ungroup() %>%
   pivot_wider(names_from=river,values_from=mean)
 ```
-
 
 ```{r fig.show="hide"}
 ggplot(data=dschrg,mapping=aes(x=datetime,y=discharge,color=river)) +
@@ -78,6 +78,7 @@ ggplot(data=dschrg,mapping=aes(x=datetime,y=discharge,color=river)) +
   labs(title="Bad and  Bois Brule Rivers, Northern WI",
        subtitle="2020 Stream Discharge",
        caption="source: USGS")
-
 ```
+
+## Political Ads in 2016 Presidential Race
 

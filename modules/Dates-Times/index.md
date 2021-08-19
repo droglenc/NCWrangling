@@ -46,3 +46,4 @@ XXX
 * [Dates and Times](https://r4ds.had.co.nz/dates-and-times.html) chapter of [*R for Data Science*](https://r4ds.had.co.nz/index.html).
 * [A Comprehensive Introduction to Handling Date & Time in R](https://blog.rsquaredacademy.com/handling-date-and-time-in-r/)
 * [Section 10.3 of Data Science for Psychologists](https://bookdown.org/hneth/ds4psy/10-3-time-lubridate.html#time:time-spans)
+* [List of Time Zones (with abbreviation)](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
