@@ -19,8 +19,8 @@ css: "/css/modules.css"
 </ul>
 <p>Answer the following questions with the newly wrangled data frame.</p>
 <ol>
-<li>Summarize the annual average number of participants by decade (<em>summary should include a measure of center and dispersion</em>). Comment on any patterns over time.</li>
-<li>Summarize the annual difference in benefits paid and total costs by decade (<em>summary should include a measure of center and dispersion</em>). Comment on any patterns over time.</li>
+<li><p>Summarize the annual average number of participants by decade (<em>summary should include a measure of center and dispersion</em>). Comment on any patterns over time.</p></li>
+<li><p>Summarize the annual difference in benefits paid and total costs by decade (<em>summary should include a measure of center and dispersion</em>). Comment on any patterns over time.</p></li>
 </ol>
 <p> </p>
 </div>
@@ -28,13 +28,13 @@ css: "/css/modules.css"
 <h2>Quarterbacks</h2>
 <p><a href="../wrangle-rows/CE_1.html#quarterbacks-ii">In this exercise</a> you created a data frame of statistics for all NCAA quarterbacks in 2019 and 2020. Get those data for this exercise but reduce it to just those quarterbacks in “Power 5” conferences (as defined <a href="../wrangle-rows/CE_1.html#quarterbacks-i">in this exercise</a>). Then use those data to perform the following tasks.</p>
 <ol>
-<li>Construct a data frame that has the sample size and mean passer rating for each conference for each year.</li>
-<li>Construct a data frame that has the sample and mean passer rating for each conference (across both years).</li>
-<li>Construct a data frame that has the sample size and mean passer rating for each year (across all five conferences).</li>
-<li>Construct a data frame that has all of the results from the previous three data frames sorted by year within each conference. [<em>Hints: (1) Modify the last two data frames so that all three data frames have the same number of variables with the same names. (2) Insert <code>NA</code>s for elements that don’t exist in the modified final data frame. (3) Your final data frame should look like that below.</em>]</li>
+<li><p>Construct a data frame that has the sample size and mean passer rating for each conference for each year.</p></li>
+<li><p>Construct a data frame that has the sample and mean passer rating for each conference (across both years).</p></li>
+<li><p>Construct a data frame that has the sample size and mean passer rating for each year (across all five conferences).</p></li>
+<li><p>Construct a data frame that has all of the results from the previous three data frames sorted by year within each conference. [<em>Hints: (1) Modify the last two data frames so that all three data frames have the same number of variables with the same names. (2) Insert <code>NA</code>s for elements that don’t exist in the modified final data frame. (3) Your final data frame should look like that below.</em>]</p></li>
 </ol>
 <pre><code>## # A tibble: 17 x 5
-## # Groups:   Conf [6]
+## # Groups:   Year [3]
 ##    Year  Conf        n valid_n  mean
 ##    &lt;chr&gt; &lt;chr&gt;   &lt;int&gt;   &lt;int&gt; &lt;dbl&gt;
 ##  1 2019  ACC        10      10  138.
@@ -66,10 +66,10 @@ css: "/css/modules.css"
 <pre class="r"><code>df &lt;- tibble(group=rep(c(&quot;A&quot;,&quot;B&quot;),c(4,5)),
              value=c(10,22,14,18,22,25,28,21,24))</code></pre>
 <ol>
-<li>Construct a data frame that is like <a href="http://derekogle.com/Book107/UnivSum.html#tab:SDCalc">Table 4.3 (in the link above)</a> but for the data in <code>df</code>. [<em>Hint: The table will not have the “Sum” row.</em>]</li>
-<li>Summarize the data frame created above to compute the standard deviation for these data. [<em>Hint: this will use <code>summarize()</code> and <code>mutate()</code> but not <code>group_by()</code>. The standard deviation you calculate should equal 5.61.</em>]</li>
-<li>Construct a data frame that is like <a href="http://derekogle.com/Book107/UnivSum.html#tab:SDCalc">Table 4.3 (in the link above)</a> but will ultimately allow you to compute the standard deviation for both groups. [<em>Hint: this will require use of <code>group_by()</code>.</em>]</li>
-<li>Summarize the last data frame created above to compute the standard deviation for both groups in these data. [<em>Hint: the standard deviations you calculate should equal 5.16 and 2.74.</em>]</li>
+<li><p>Construct a data frame that is like <a href="http://derekogle.com/Book107/UnivSum.html#tab:SDCalc">Table 4.3</a> (from the link above) but for the data in <code>df</code>. [<em>Hint: The table will not have the “Sum” row.</em>]</p></li>
+<li><p>Summarize the data frame created above to compute the standard deviation for these data. [<em>Hint: this will use <code>summarize()</code> and <code>mutate()</code> but not <code>group_by()</code>. The standard deviation you calculate should equal 5.61.</em>]</p></li>
+<li><p>Construct a data frame that is like <a href="http://derekogle.com/Book107/UnivSum.html#tab:SDCalc">Table 4.3</a> but will ultimately allow you to compute the standard deviation for both groups. [<em>Hint: this will require use of <code>group_by()</code>.</em>]</p></li>
+<li><p>Summarize the last data frame created above to compute the standard deviation for both groups in these data. [<em>Hint: the standard deviations you calculate should equal 5.16 and 2.74.</em>]</p></li>
 </ol>
 </div>
 

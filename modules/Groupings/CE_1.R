@@ -68,7 +68,7 @@ sum_by_year
 sum_by_conf %<>% mutate(Year=NA)
 sum_by_year %<>% mutate(Conf=NA)
 
-sum_qbs <- bind_rows(sum_conf_by_year,sum_by_conf,sum_by_year) %>%
+sum_qbs <- bind_rows(sum_year_by_conf,sum_by_conf,sum_by_year) %>%
   arrange(Conf,Year) %>%
   relocate(Year)
 
@@ -103,4 +103,4 @@ sd2 <- sum2 %>%
 sd2
 
 
-# Script created at 2021-08-18 17:07:08
+# Script created at 2021-08-18 19:46:28
