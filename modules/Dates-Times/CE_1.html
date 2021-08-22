@@ -12,9 +12,28 @@ css: "/css/modules.css"
 <p>Follow the same descriptions as in the reading for obtaining (just) stream <strong>discharge</strong> data for the Bois Brule and Bad Rivers in northern Wisconsin (see map below) for all of 2020.</p>
 <p><img src="WI_discharge_map.JPG" width="60%" /></p>
 <p>Combine these data into one data frame and compute mean discharge by month for each river. Rearrange the resultant data frame so that the monthly results for both rivers are in side-by-side columns. Show your full code and results and comment on any observations that you can make from your summaries.</p>
+<p> </p>
 </div>
-<div id="political-ads-in-2016-presidential-race" class="section level2">
-<h2>Political Ads in 2016 Presidential Race</h2>
+<div id="phenology-of-slovenian-trees" class="section level2">
+<h2>Phenology of Slovenian Trees</h2>
+<p><a href="https://figshare.com/articles/dataset/Phenology_observations_of_deciduous_tree_species_in_Slovenia_from_2004_to_2019/14829081">zust et al. (2021)</a> recorded the first date that leaves were found (called start of season) and the last date that leaves were found for various deciduous trees at specific locations (they called them “stations”) in Slovenia over several years. The data are recorded in <a href="https://github.com/droglenc/NCWrangling/raw/main/resources/data/Phenology%20Slovenia%202004-2019.xlsx">Phenology Slovenia 2004-2019.xlsx</a>.</p>
+<ol>
+<li><p>Load these data into R and perform the following wranglings to “clean” the data.</p>
+<ul>
+<li>Change names to standardized formats (note that “SOS” means “start of season” and “EOS” means “end of season”).</li>
+<li>Eliminate the “station code” variable.</li>
+<li>Convert dates from character format to date format.</li>
+<li>Find the length of the “season” (in days) for each observation (i.e., time between the start and end of the season).</li>
+<li>Create a year variable.</li>
+<li>Create variables that represent the day of the year (i.e., days since 1-Jan) for both the start and end of the season.</li>
+<li>Select only observations for the <em>Fagus sylvatica</em> species (i.e., European Beech).</li>
+<li>Change the station name variable to a factor with the location levels ordered from earliest to latest mean seasons starting date. [<em>Hint: Note that there are missing values in the date variables.</em>]</li>
+</ul></li>
+<li><p>Summarize the cleaned data to find the mean day of the year that the season starts and ends and the mean length of the season for <em>Fagus sylvatica</em> at each station.</p></li>
+<li><p>Numerical day of the year (day since 1-Jan) is useful for calculations (above you computed the mean day of the year for the start and end dates of the leaf-out season), but it is not as useful for graphing (e.g., readers don’t immediately know when day 175 is). A day of the year can be converted to a date with <code>as_date()</code> from <code>lubridate</code>. By default the date will be created in 1970, which will not be an issue here because we want to find the mean date within any given year. Thus, create two new variables using <code>as_date()</code> that will have the mean start and end to the season for each station as an actual date, rather than day of the year. [<em>Hint: Add the variables to the summary data frame from the previous questions. Also note that <code>as_date()</code> was not described in the reading but it is easy to use … just give it a day-of-the-year value.</em>]</p></li>
+</ol>
+<p>An example plot for the modified data is shown below.</p>
+<p><img src="CE_1_files/figure-html/unnamed-chunk-10-1.png" width="528" /></p>
 </div>
 
 
