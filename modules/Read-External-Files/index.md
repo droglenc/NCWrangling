@@ -28,7 +28,7 @@ XXX
 
 ## Preparation for Class
 
-* [Reading](http://derekogle.com/BookWrangling/read-external-files.html){:target="_blank"}.
+* [Reading](http://derekogle.com/BookWrangling/read-external-data-files.html){:target="_blank"}.
 
 ----
 
