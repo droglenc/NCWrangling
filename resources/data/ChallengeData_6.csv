@@ -2,7 +2,7 @@ Math assessment scores,,,
 Student_ID: A unique student identification number,,,
 Gender: Student gender (F or M),,,
 Math_Grade8: Math assessment score in 8th grade,,,
-Math_ACT: Math assessmetn socre on the ACT in 12th grade,,,
+Math_ACT: Math assessment score on the ACT in 12th grade,,,
 ,,,
 Student_ID,Gender,Math_Grade8,Math_ACT
 345234,F,45,NONE
