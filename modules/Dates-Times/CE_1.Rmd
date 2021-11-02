@@ -90,10 +90,8 @@ ggplot(data=dschrg,mapping=aes(x=datetime,y=discharge,color=river)) +
     * Eliminate the "station code" variable.
     * Convert dates from character format to date format.
     * Find the length of the "season" (in days) for each observation (i.e., time between the start and end of the season).
-    * Create a year variable.
     * Create variables that represent the day of the year (i.e., days since 1-Jan) for both the start and end of the season.
     * Select only observations for the *Fagus sylvatica* species (i.e., European Beech).
-    * Change the station name variable to a factor with the location levels ordered from earliest to latest mean seasons starting date. [*Hint: Note that there are missing values in the date variables.*]
 
 ```{r warning=FALSE}
 ps <- readxl::read_excel(file.path("..","..","resources","data",
