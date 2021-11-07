@@ -22,6 +22,7 @@ FSA::purl2(file.path(here::here(),dnm,paste0(fnm,".Rmd")),
 knitr::opts_chunk$set(echo=FALSE,results="hide",message=FALSE)
 library(tidyverse)
 library(lubridate)
+library(magrittr)
 ```
 
 ----

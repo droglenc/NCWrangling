@@ -24,10 +24,8 @@ css: "/css/modules.css"
 <li>Eliminate the “station code” variable.</li>
 <li>Convert dates from character format to date format.</li>
 <li>Find the length of the “season” (in days) for each observation (i.e., time between the start and end of the season).</li>
-<li>Create a year variable.</li>
 <li>Create variables that represent the day of the year (i.e., days since 1-Jan) for both the start and end of the season.</li>
 <li>Select only observations for the <em>Fagus sylvatica</em> species (i.e., European Beech).</li>
-<li>Change the station name variable to a factor with the location levels ordered from earliest to latest mean seasons starting date. [<em>Hint: Note that there are missing values in the date variables.</em>]</li>
 </ul></li>
 <li><p>Summarize the cleaned data to find the mean day of the year that the season starts and ends and the mean length of the season for <em>Fagus sylvatica</em> at each station.</p></li>
 <li><p>Numerical day of the year (day since 1-Jan) is useful for calculations (above you computed the mean day of the year for the start and end dates of the leaf-out season), but it is not as useful for graphing (e.g., readers don’t immediately know when day 175 is). A day of the year can be converted to a date with <code>as_date()</code> from <code>lubridate</code>. By default the date will be created in 1970, which will not be an issue here because we want to find the mean date within any given year. Thus, create two new variables using <code>as_date()</code> that will have the mean start and end to the season for each station as an actual date, rather than day of the year. [<em>Hint: Add the variables to the summary data frame from the previous questions. Also note that <code>as_date()</code> was not described in the reading but it is easy to use … just give it a day-of-the-year value.</em>]</p></li>
