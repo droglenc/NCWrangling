@@ -157,7 +157,7 @@ qb_sum1 <- qbs20 %>%
 qb_sum1
 ```
 
-3. Create another new variable (from the previously new variable) that will order the conferences in descending order of mean passer rating. Again, make sure that the "Other" category is the last level of this new variable.
+3. Create another new variable (based on the new variable in question 1) that will order the conferences in descending order of mean passer rating. Again, make sure that the "Other" category is the last level of this new variable.
 
 ```{r}
 qbs20 %<>%
